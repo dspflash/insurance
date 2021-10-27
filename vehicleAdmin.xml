@@ -1,0 +1,173 @@
+<WndTap Name="vehicleAdmin" Text="车辆信息管理"><Ctrls>
+	<GroupBox Name="GBVEH" id="vehicle" Size="700,500" Text="车辆信息" overlap="GBINSURA" feature="tab"><Ctrls>        
+		<Label Name="lb_vehLicPlate"  Text="号牌" Size="80,20" align="right"/>
+		<TextBox Name="vehLicPlate" Size="60,20"/>        
+		<Button Name="search_veh" Size="20,20" Text="搜" ToolTip="根据车牌号码搜索车辆信息">
+			<OnClick><if cond="%{vehLicPlate}"><assign name="extvehcond" expr=" and vehLicPlate like '%%{vehLicPlate}%'"/><DbDetails><Where>id_corp=%{id_corp}%{extvehcond}</Where></DbDetails>
+				<submit namelist="DbDetails" next="vehLst"/><assign name="extvehcond" expr=""/></if></OnClick></Button>
+		<Label Name="lb_vehRegisterFirst"  Text="初登日期" Size="80,20" align="right"/>
+		<DateTime Name="vehRegisterFirst" Format="yyyy-MM-dd" Size="80,20" tooltip="初登日期"/>
+		<Label Name="lb_vehRegisterFirst"  Text="生产年份" Size="80,20" align="right"/>
+		<DateTime Name="vehYearOfManufacture" Format="yyyy" Size="80,20" tooltip="生产年份Year of vehicle''s manufacture"/>
+		<Label Name="lb_vehStatus"  Text="车辆状态" Size="80,20" align="right"/>
+		<ComboBox Name="vehStatus" Type="3" Size="80,120" SelectedIndex="0" items="正常|转出|被盗抢|停驶|注销|违法未处理|海关监管|事故未处理|嫌疑车|查封|暂扣|强制注销|事故逃逸|锁定"/>
+		<BR/><Label Name="lb_vehVIN"  Text="车架号" Size="80,20" align="right"/> 
+		<TextBox Name="vehVIN" Size="80,20"/>        
+		<Label Name="lb_vehBodyColor"  Text="车辆颜色" Size="80,20" align="right"/>
+		<TextBox Name="vehBodyColor" Size="80,20"/> 
+		<Label Name="lb_vehEngineID"  Text="发动机号" Size="80,20" align="right"/>
+		<TextBox Name="vehEngineID" Size="80,20"/>        
+		<Label Name="lb_vehEngineSizeCC"  Text="排量" Size="80,20" align="right"/>
+		<TextBox Name="vehEngineSizeCC" Size="80,20"/>        
+		<BR/><Label Name="lb_vehBodyIDbod"  Text="车型" Size="80,20" align="right"/>
+		<ComboBox Name="vehBodyIDbod" Type="2" Size="100,120" SelectedIndex="0" Onload="init">
+			<DbDetails><queryFormat>select nameCN from test.insure_bodytype</queryFormat></DbDetails>
+			</ComboBox>
+		<Button Name="addvehBodyIDbod" Text="新增" Size="30,20" ToolTip="增加商品目录">
+			<OnClick>
+				<if cond="!%{vehBodyIDbod[windowtext]}"><alert expr="%{lb_vehBodyIDbod}不能为空"/>
+				<else/>
+				<DbDetails><queryFormat>insert into test.insure_bodytype (name,nameCN) values ('%{vehBodyIDbod[Letter]}','%{vehBodyIDbod[windowtext]}')</queryFormat></DbDetails><submit namelist="DbDetails"/>
+				<DbDetails/><submit next="vehBodyIDbod" namelist="DbDetails"/>
+				</if></OnClick>
+			</Button>
+		<Label Name="lb_vehMakeIDmak"  Text="品牌" Size="80,20" align="right"/>
+		<ComboBox Name="vehMakeIDmak" Type="2" Size="100,120" SelectedIndex="0" Onload="init">
+			<DbDetails><queryFormat>select name from test.insure_make</queryFormat></DbDetails>
+			</ComboBox>
+		<Button Name="addvehMakeIDmak" Text="新增" Size="30,20" ToolTip="增加商品目录">
+			<OnClick>
+				<if cond="!%{vehMakeIDmak[windowtext]}"><alert expr="%{lb_vehMakeIDmak}不能为空"/>
+				<else/>
+				<DbDetails><queryFormat>insert into test.insure_make (name) values ('%{vehMakeIDmak[windowtext]}')</queryFormat></DbDetails><submit namelist="DbDetails"/>
+				<DbDetails/><submit next="vehMakeIDmak" namelist="DbDetails"/>
+				</if></OnClick>
+			</Button>
+		<Label Name="lb_vehModelIDmod"  Text="型号" Size="80,20" align="right"/>
+		<ComboBox Name="vehModelIDmod" Type="2" Size="100,120" SelectedIndex="0" Onload="init">
+			<DbDetails><queryFormat>select name from test.insure_model</queryFormat></DbDetails>
+			</ComboBox>
+		<Button Name="addvehModelIDmod" Text="新增" Size="30,20" ToolTip="增加商品目录">
+			<OnClick>
+				<if cond="!%{vehModelIDmod[windowtext]}"><alert expr="%{lb_vehModelIDmod}不能为空"/>
+				<else/>
+				<DbDetails><queryFormat>insert into test.insure_model (name) values ('%{vehModelIDmod[windowtext]}')</queryFormat></DbDetails><submit namelist="DbDetails"/>
+				<DbDetails/><submit next="vehModelIDmod" namelist="DbDetails"/>
+				</if></OnClick>
+			</Button>
+		<BR/><!--Label Name="lb_category"  Text="使用性质" Size="80,20" align="right"/>
+		<ComboBox Name="vehuseage" Type="2" Size="100,120" SelectedIndex="0" Onload="init">
+			<DbDetails><queryFormat>select nameCN from test.insure_insuredtype</queryFormat></DbDetails>
+			</ComboBox>
+		<Button Name="addvehBodyIDbod" Text="新增" Size="30,20" ToolTip="增加商品目录">
+			<OnClick>
+				<if cond="!%{vehBodyIDbod[windowtext]}"><alert expr="%{lb_vehBodyIDbod}不能为空"/>
+				<else/>
+				<DbDetails><queryFormat>insert into insure_insuredtype (name,nameCN) values ('%{vehBodyIDbod[Letter]}','%{vehBodyIDbod[windowtext]}')</queryFormat></DbDetails><submit namelist="DbDetails"/>
+				<DbDetails/><submit next="vehBodyIDbod" namelist="DbDetails"/>
+				</if></OnClick>
+			</Button-->
+		<Label Name="lb_vehMilage"  Text="行驶里程" Size="80,20" align="right"/>
+		<TextBox Name="vehMilage" Size="60,20"/>        
+		<Label Name="lb_vehSeatingCapacity"  Text="座位人数" Size="80,20" align="right"/>
+		<TextBox Name="vehSeatingCapacity" Size="40,20"/>        
+		<BR/><Label Name="lb_vehOwner"  Text="使用单位/个人" Size="80,20" align="right"/>
+		<TextBox Name="vehOwner" Size="160,20"/>        
+		<Label Name="lb_vehOwnerAddr"  Text="单位/个人地址" Size="80,20" align="right"/>
+		<TextBox Name="vehOwnerAddr" Size="240,20"/>        
+<BR/><Label Name="lb_vehValueWhenNewAmount" Size="80,20" align="right" Text="新车价值"/>
+<TextBox Name="vehValueWhenNewAmount" Size="80,20" Tooltip="value of vehicle when new"/>  
+<TextBox Name="vehValueWhenNewIDccy" Size="30,20" Text="CNY"/>
+<Label Name="lb_vehCurrentEstimateedValueAmount" Size="80,20" align="right" Text="实际价值"/>
+<TextBox Name="vehCurrentEstimateedValueAmount" Size="80,20" Tooltip="vehicle''s current estimated value"/>   
+<TextBox Name="vehCurrentEstimatedValueIDccy" Size="30,20" Text="CNY"/>
+<Label Name="lb_vehUnladedWeightAmount" Size="80,20" align="right" Text="空车重量"/>
+<TextBox Name="vehUnladedWeightAmount" Size="40,20" Tooltip="vehicle''s unladed weight"/>  
+<TextBox Name="vehUnladedWeightIDwei" Size="20,20" Text="吨"/>
+<Label Name="lb_vehMaxLoadWeightAmount" Size="80,20" align="right" Text="满载重量"/>
+<TextBox Name="vehMaxLoadWeightAmount" Size="40,20" Tooltip="vehicle''s maximum loading amount"/>
+<TextBox Name="vehMaxLoadWeightIDwei" Size="20,20" Text="吨"/>
+<BR/><Label Name="lb_vehPolicyIDpol" Size="80,20" align="right" Text="保单号码"/>
+<TextBox Name="vehPolicyIDpol" Size="110,20"/>
+<Label Name="lb_vehSumInsuredLocalAmount" Size="80,20" align="right" Text="保险总价"/>
+<TextBox Name="vehSumInsuredLocalAmount" Size="80,20" Tooltip="vehicle sum insured amount in the local currency"/>
+<TextBox Name="vehSumInsuredLocalIDccy" Size="30,20" Text="CNY"/>
+<Label Name="lb_vehPremiumLocalAmount" Size="80,20" align="right" Text="保险费"/>
+<TextBox Name="vehPremiumLocalAmount" Size="80,20" Tooltip="保险费vehicle premium in local currency"/>
+<TextBox Name="vehPremiumLocalIDccy" Size="30,20" Text="CNY"/>
+<BR/><Label Name="lb_vehDayTimeLocationIDadd" Size="80,20" align="right" Text="夜间停车地点"/>
+<TextBox Name="vehDayTimeLocationIDadd" Size="80,20"/>
+<Label Name="lb_vehNightTimeLocationIDadd" Size="80,20" align="right" Text="白天停车地点"/>
+<TextBox Name="vehNightTimeLocationIDadd" Size="80,20"/>
+		<BR/><CheckBox Name="vehAlarmFitted" Size="60,20" Text="报警器" Checked="0" ToolTip=""/>
+		<CheckBox Name="vehBoughtFromNew" Size="80,20" Text="非二手车" Checked="0" ToolTip="Was vehicle bought from new"/>
+		<CheckBox Name="vehTrackingSystemFitted" Size="60,20" Text="GPS跟踪" Checked="0" ToolTip="is the vehicle fitted with a tracking system"/>
+		<CheckBox Name="vehCompanyVehicle" Size="80,20" Text="企事业所有" Checked="0" ToolTip="Vehicle is owned by a company"/>
+		<CheckBox Name="vehRighthandDrive" Size="80,20" Text="右侧驾驶" Checked="0" ToolTip="Is the vehicle right-hand drive"/>
+		<CheckBox Name="vehSubjectToLoan" Size="80,20" Text="抵押贷款中" Checked="0" ToolTip="Is the vehicle currently subject to an outstanding loan agreement"/>
+		<CheckBox Name="vehDriverAirBagFitted" Size="110,20" Text="驾驶人安全气囊" Checked="0" ToolTip="Does the vehicle have a driver''s airbag fitted"/>
+		<CheckBox Name="vehPassengerAirbagFitted" Size="110,20" Text="副驾驶安全气囊" Checked="0" ToolTip="Does the vehicle have a passenger''s airbag fitted"/>
+		<BR/><CheckBox Name="vehRentalVehicle" Size="60,20" Text="租赁" Checked="0" ToolTip="Is vehicle a rental"/>
+		<CheckBox Name="vehTrailer" Size="80,20" Text="牵引拖车" Checked="0" ToolTip="is the vehicle used for towing a trailer"/>
+		<CheckBox Name="vehCommercialVehicle" Size="60,20" Text="商用车" Checked="0" ToolTip="Is this a commercial vehicle"/>
+		<CheckBox Name="vehUsageBusiness" Size="80,20" Text="商务车" Checked="0" ToolTip="is the vehicle used for business"/>
+		<CheckBox Name="vehUsageCarriageOfGoods" Size="80,20" Text="货运用车" Checked="0" ToolTip="is the vehicle used for the carriage of goods"/>
+		<CheckBox Name="vehUsageSocialHome" Size="80,20" Text="家用/社会车辆" Checked="0" ToolTip="is the vehicle used for home or socially"/>
+		<CheckBox Name="vehToolsStroredDayTime" Size="110,20" Text="白天工具留车内" Checked="0" ToolTip="Is the vehicle currently subject to an outstanding loan agreement"/>
+		<CheckBox Name="vehToolsStroredNightTime" Size="110,20" Text="夜里工具留车内" Checked="0" ToolTip="are tools stored in the vehicle during the nighttime"/>
+		<TextBox Name="vehID" Visible="false" Size="20,20" ToolTip="机动车编号">
+				<DbDetails>
+					<queryFormat>select vehID from test.insure_vehicle where vehLicPlate='%{vehLicPlate}' and vehEnterBy=%{user_code} limit 0,1</queryFormat> 
+				</DbDetails>
+			<OnEnChange><assign name="session.vehid" expr="%{vehID}"/>
+				<!--if cond="%{vehID}"><DbDetails></DbDetails><submit next="HistoryList" namelist="DbDetails" method="post"/><submit next="OrderList" namelist="DbDetails" method="post"/>
+				<assign name="CB_eyeill" expr="-1" function="SetSel"/>
+				<else/><submit next="OrderList" method="post" function="resetcontent"/><submit next="HistoryList" method="post" function="resetcontent"/></if-->
+				</OnEnChange>
+			</TextBox>        
+		<BR/>
+		<CheckBox Name="vehRoadWorthyCertificate" Size="80,20" Text="上路证" Checked="0" Tooltip="Does the vehicle hold a current Road worthy certificate"/>
+		<Label Name="lb_vehRoadWorthyCertificateExpiry"  Text="上路证有效期" Size="80,20" align="right"/>
+		<DateTime Name="vehRoadWorthyCertificateExpiry" Format="yyyy-MM-dd" Size="80,20" tooltip="上路年审Vehicle''s current road worthy certificate expiry date"/>
+		<Label Name="lb_vehCoverStart"  Text="保险起始日" Size="80,20" align="right"/>
+		<DateTime Name="vehCoverStart" Format="yyyy-MM-dd" Size="80,20" tooltip="保险起始日When did the cover start"/>
+		<Label Name="lb_vehCoverEnd"  Text="保险到期日" Size="80,20" align="right"/>
+		<DateTime Name="vehCoverEnd" Format="yyyy-MM-dd" Size="80,20" tooltip="保险到期日When does cover end"/>
+		<BR/><Label Name="lb_vehremark"  Text="备注" Size="30,20" align="right"/>
+		<TextBox Name="vehremark" Size="550,20"/>        
+		
+		<BR/><ListCtrl Name="vehLst"  PageSize="10" Size="400,100" loadedclick="0" OnClick="" OnLoad="init"
+			Heading="号牌,100;品牌,100;型号,100;车架号,100;">
+			<DbDetails fcsm="1">
+				<DbTable>test.insure_vehicle</DbTable>
+				<Index>d_id</Index>
+				<Data>vehLicPlate, vehMakeIDmak, vehModelIDmod, vehVIN, vehBodyIDbod, vehBodyColor, vehOwner, vehOwnerAddr, vehRegisterFirst, vehSoundSystemIDsou, vehParkedIDpar, vehAccidentIDacc, vehModifiedIDmdf, vehRiskCodeIDrsk, vehAlarmFitted, vehBoughtFromNew, vehYearOfManufacture, vehCapacitiyVolume, vehCommercialVehicle, vehCompanyVehicle, vehCoverStart, vehCoverEnd, vehDriverAirBagFitted, vehEngineID, vehEngineSizeCC, vehMilage, vehPassengerAirbagFitted, vehRentalVehicle, vehRighthandDrive, vehRoadWorthyCertificate, vehRoadWorthyCertificateExpiry, vehSeatingCapacity, vehSubjectToLoan, vehToolsStroredDayTime, vehToolsStroredNightTime, vehTrackingSystemFitted, vehTrailer, vehUsageBusiness, vehUsageCarriageOfGoods, vehUsageSocialHome, vehWhenIsuredTookPossession, vehSumInsuredLocalAmount, vehSumInsuredLocalIDccy, vehSumInsuredForeignAmount, vehSumInsuredForeignIDccy, vehRiskCurrencyAmount, vehRiskCurrencyIDccy, vehPremiumForeignAmount, vehPremiumForeignIDccy, vehCurrentEstimateedValueAmount, vehCurrentEstimatedValueIDccy, vehPremiumLocalAmount, vehPremiumLocalIDccy, vehValueWhenNewAmount, vehValueWhenNewIDccy, vehUnladedWeightAmount, vehUnladedWeightIDwei, vehMaxLoadWeightAmount, vehMaxLoadWeightIDwei, vehPolicyIDpol, vehDayTimeLocationIDadd, vehNightTimeLocationIDadd, vehStatus, vehremark,vehID</Data>
+				<Order></Order>
+				<Where>id_corp=%{id_corp}%{extentcond}%{extvehcond}</Where>
+				</DbDetails>
+			</ListCtrl>
+		<TAB/><GroupBox Name="GBOP" Size="80,20" Text="操作"><Ctrls>
+		<Button Name="insertvehicle" Size="50,20" Text="添加">
+			<OnClick>
+				<DbDetails fcsm="1">
+					<data> vehLicPlate, vehVIN,vehMakeIDmak, vehModelIDmod, vehBodyIDbod, vehBodyColor, vehOwner, vehOwnerAddr, vehRegisterFirst, vehSoundSystemIDsou, vehParkedIDpar, vehAccidentIDacc, vehModifiedIDmdf, vehRiskCodeIDrsk, vehAlarmFitted, vehBoughtFromNew, vehYearOfManufacture, vehCapacitiyVolume, vehCommercialVehicle, vehCompanyVehicle, vehCoverStart, vehCoverEnd, vehDriverAirBagFitted, vehEngineID, vehEngineSizeCC, vehMilage, vehPassengerAirbagFitted, vehRentalVehicle, vehRighthandDrive, vehRoadWorthyCertificate, vehRoadWorthyCertificateExpiry, vehSeatingCapacity, vehSubjectToLoan, vehToolsStroredDayTime, vehToolsStroredNightTime, vehTrackingSystemFitted, vehTrailer, vehUsageBusiness, vehUsageCarriageOfGoods, vehUsageSocialHome, vehWhenIsuredTookPossession, vehSumInsuredLocalAmount, vehSumInsuredLocalIDccy, vehSumInsuredForeignAmount, vehSumInsuredForeignIDccy, vehRiskCurrencyAmount, vehRiskCurrencyIDccy, vehPremiumForeignAmount, vehPremiumForeignIDccy, vehCurrentEstimateedValueAmount, vehCurrentEstimatedValueIDccy, vehPremiumLocalAmount, vehPremiumLocalIDccy, vehValueWhenNewAmount, vehValueWhenNewIDccy, vehUnladedWeightAmount, vehUnladedWeightIDwei, vehMaxLoadWeightAmount, vehMaxLoadWeightIDwei, vehPolicyIDpol, vehDayTimeLocationIDadd, vehNightTimeLocationIDadd, vehStatus, vehremark</data>
+					<dataEx>id_corp,vehEnterBy,insuraID;%{id_corp},%{user_code},'%{session.insid}'</dataEx>
+					<queryFormat>insert into test.insure_vehicle %{data}</queryFormat></DbDetails><submit namelist="DbDetails"/>
+				<submit next="vehID"/><submit next="refreshvehicle" function="click"/>
+			</OnClick></Button>
+		<Button Name="deletevehicle" Size="50,20" Text="删除">
+			<OnClick>
+				<DbDetails>
+				<DbTable>test.insure_vehicle</DbTable>
+				<Where>vehID='%{vehLst[vehID]}'</Where>
+				<queryFormat>delete from %{dbtable} where %{where}</queryFormat></DbDetails><submit namelist="DbDetails"/>
+				<submit next="refreshvehicle" function="click"/>
+			</OnClick></Button>
+		<BR/><Button Name="refreshvehicle" Size="50,20" Text="刷新" >
+			<OnClick><DbDetails><Where>id_corp=%{id_corp}%{extentcond}</Where></DbDetails>
+				<submit namelist="DbDetails" next="vehLst"/>
+			</OnClick></Button>
+			</Ctrls></GroupBox>
+
+	</Ctrls></GroupBox></Ctrls>
+	</WndTap>

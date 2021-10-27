@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEinsure_claim" Size="100,100"><Ctrls>
+<Button sqlpkinsert="clmid" Text="create" ToolTip="ttp_createinsure_claim" Name="insertinsure_claim" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>insure.insure_claim</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>clmvehicleidveh[vehid],insure_claimtypeidcla,insuraid,clmincidentmileageattime,clmincidentaddressidadd,clmincidentoccured,clmamountpaidamount,clmamountpaididccy,clmlegalfeesamount,clmlegalfeesidccy,clmrecoveriesamount,clmrecoveriesidccy,clmtotallossincuredamount,clmtotallossincurredidccy,clmpolicyidpol,clmenterby</Data>
+<DataEx>clmid;uuid()</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="insure_claimLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyinsure_claim" Name="modifyinsure_claim" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>insure.insure_claim</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>clmvehicleidveh[vehid],insure_claimtypeidcla,insuraid,clmincidentmileageattime,clmincidentaddressidadd,clmincidentoccured,clmamountpaidamount,clmamountpaididccy,clmlegalfeesamount,clmlegalfeesidccy,clmrecoveriesamount,clmrecoveriesidccy,clmtotallossincuredamount,clmtotallossincurredidccy,clmpolicyidpol,clmenterby</Data>
+<DataEx/>
+<Where>clmid='%{clmid}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="insure_claimLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetinsure_claim" Name="resetinsure_claim" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITinsure_claim" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchinsure_claim" Name="gsearchinsure_claim" Size="50,20" visible="false">
+	<OnClick>
+	<search next="insure_claimLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITinsure_claim" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

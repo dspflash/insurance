@@ -1,0 +1,38 @@
+﻿<Language name="insure_theftfire">
+<Lang name="insure_theftfire" value="盗窃失火管理"/>
+<Lang name="TabEditinsure_theftfire" value="insure_theftfire Edit"/>
+<Lang name="TabViewinsure_theftfire" value="insure_theftfire View"/>
+<Lang name="thealarmon" value="防盗装置响起"/>
+<Lang name="ttp_thealarmon" value="Was an alarm on at time of theft"/>
+<Lang name="theallwindowsanddoorssecured" value="门窗锁好"/>
+<Lang name="ttp_theallwindowsanddoorssecured" value="Were all windows and doors in the vehicle secured"/>
+<Lang name="theanytoolsinvehicle" value="车内留有工具或设备"/>
+<Lang name="ttp_theanytoolsinvehicle" value="Were any tools or equipment in vehicle at time of theft"/>
+<Lang name="thekeysinvehicle" value="点火钥匙在车内"/>
+<Lang name="ttp_thekeysinvehicle" value="Were ignition keys in vehicle"/>
+<Lang name="thekeysstolenwithvehicle" value="车钥匙被盗"/>
+<Lang name="ttp_thekeysstolenwithvehicle" value="Were ignition keys stolen with vehicle"/>
+<Lang name="thelockedingarage" value="在车库被盗"/>
+<Lang name="ttp_thelockedingarage" value="Was vehicle in a locked garaged prior to theft"/>
+<Lang name="theclaimidclm" value=""/>
+<Lang name="ttp_theclaimidclm" value=""/>
+<Lang name="theenterby" value=""/>
+<Lang name="ttp_theenterby" value=""/>
+<Lang name="theid" value=""/>
+<Lang name="ttp_theid" value=""/>
+<Lang name="ttp_operationinsure_theftfire" value=""/>
+<Lang name="ttp_createinsure_theftfire" value=""/>
+<Lang name="ttp_modifyinsure_theftfire" value=""/>
+<Lang name="ttp_resetinsure_theftfire" value=""/>
+<Lang name="ttp_deleteinsure_theftfire" value=""/>
+<Lang name="ttp_refreshinsure_theftfire" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

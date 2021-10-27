@@ -1,0 +1,13 @@
+﻿<WndTap Name="insure_vehicle" Text="insure_vehicle" Ver="2">
+<var name="refreshAfterEdit" expr="0"/>
+<var name="dataRequired" expr=""/>
+<var name="dataRequireless" expr=""/>
+<xi:include href="lan\insure_vehicle.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBinsure_vehicle" id="insure_vehicle" Text="insure_vehicle" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="insure_vehicle_GBDEDIT.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="insure_vehicle_GBOPE.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="insure_vehicle_Vh.xml"/></Ctrls></GroupBox></Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate><SetVisible name="insertinsure_vehicle" Visible="1"/><SetVisible name="modifyinsure_vehicle" Visible="0"/></OnActivate>
+</WndTap>

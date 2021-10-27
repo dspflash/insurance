@@ -1,0 +1,10 @@
+﻿<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>clmid='%{insure_claim_vLst[clmid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.insure_claim.insure_claimLst"/></op>
+<op text="theftfire" remark="for 发动机火灾盗窃"><assign name="$this.insure_theftfire.theClaimIDclm" expr="%{insure_claim_vLst[clmid]}"/><DbDetails><Where>theClaimIDclm='%{insure_claim_vLst[clmid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.insure_theftfire.insure_theftfireLst"/></op>
+<op text="accident"><assign name="$this.insure_accident.accClaimIDclm" expr="%{insure_claim_vLst[clmid]}"/><DbDetails><Where>accClaimIDclm='%{insure_claim_vLst[clmid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.insure_accident.insure_accidentLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>insure.insure_claim</DbTable>
+<Where>clmid='%{insure_claim_vLst[clmid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>

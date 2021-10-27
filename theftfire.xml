@@ -1,0 +1,56 @@
+<WndTap Name="theftfire" Text="盗窃失火管理"><Ctrls>
+<GroupBox Name="gbtheftfire" id="theftfire" Size="80,20" Text="盗窃失火信息" overlap="GBaccident"><Ctrls>        
+		<CheckBox Name="theAlarmOn" Size="150,20" Text="防盗装置响起" Checked="0" ToolTip="Was an alarm on at time of theft"/> 
+		<CheckBox Name="theAllWindowsAndDoorsSecured" Size="150,20" Text="门窗锁好" Checked="0" ToolTip="Were all windows and doors in the vehicle secured"/> 
+		<CheckBox Name="theAnyToolsInVehicle" Size="150,20" Text="车内留有工具或设备" Checked="0" ToolTip="Were any tools or equipment in vehicle at time of theft"/> 
+		<BR/><CheckBox Name="theKeysInVehicle" Size="150,20" Text="点火钥匙在车内" Checked="0" ToolTip="Were ignition keys in vehicle"/> 
+		<CheckBox Name="theKeysStolenWithVehicle" Size="150,20" Text="车钥匙被盗" Checked="0" ToolTip="Were ignition keys stolen with vehicle"/> 
+		<CheckBox Name="theLockedInGarage" Size="150,20" Text="在车库被盗" Checked="0" ToolTip="Was vehicle in a locked garaged prior to theft"/> 
+		<TextBox Name="theClaimIDclm" Size="50,20" visible="0"/>
+		<TextBox Name="theID" Visible="false" Size="20,20" ToolTip="保单号码">
+				<DbDetails>
+					<queryFormat>select theID from test.insure_TheftFire where theClaimIDclm='%{clmID}' and theEnterBy=%{user_code} limit 0,1</queryFormat> 
+				</DbDetails>
+			<!--OnEnChange><if cond="%{c_id}"><DbDetails></DbDetails><submit next="HistoryList" namelist="DbDetails" method="post"/><submit next="OrderList" namelist="DbDetails" method="post"/>
+				<assign name="CB_eyeill" expr="-1" function="SetSel"/>
+				<else/><submit next="OrderList" method="post" function="resetcontent"/><submit next="HistoryList" method="post" function="resetcontent"/></if></OnEnChange-->
+			</TextBox>        
+
+		<BR/><ListCtrl Name="theftLst"  PageSize="10" Size="400,100" loadedclick="false" OnClick="" OnLoad="init"
+			Heading="防盗装置响起,100;门窗锁好,100;车内留有工具或设备,100;点火钥匙在车内,100;">
+			<DbDetails fcsm="1">
+				<DbTable>test.insure_TheftFire</DbTable>
+				<Index>d_id</Index>
+				<Data>theAlarmOn, theAllWindowsAndDoorsSecured,theAnyToolsInVehicle, theKeysInVehicle, theKeysStolenWithVehicle, theLockedInGarage,theID</Data>
+				<Order></Order>
+				<Where>theClaimIDclm='%{clmID}'</Where>
+				</DbDetails>
+			<OnClick><if cond="!%{insuLst[insura_idx]}"><submit next="properties" function="resetcontent"/><else/>
+					<submit next="properties"/>
+			</if></OnClick>
+			</ListCtrl>
+		<TAB/><GroupBox Name="GBOP" Size="80,20" Text="操作"><Ctrls>
+		<Button Name="inserttheft"   Size="50,20" Text="添加">
+			<OnClick>
+				<DbDetails fcsm="1">
+					<data>theAlarmOn, theAllWindowsAndDoorsSecured,theAnyToolsInVehicle, theKeysInVehicle, theKeysStolenWithVehicle, theLockedInGarage</data>
+					<dataEx>theClaimIDclm,theEnterBy;'%{clmID}',%{user_code}</dataEx>
+					<queryFormat>insert into test.insure_TheftFire %{data}</queryFormat></DbDetails><submit namelist="DbDetails"/>
+				<submit next="theID"/><submit next="theftLst"/>
+			</OnClick></Button>
+		<Button Name="deletetheft" Size="50,20" Text="删除">
+			<OnClick>
+				<DbDetails>
+				<DbTable>test.insure_TheftFire</DbTable>
+				<Where>theID='%{theftLst[theID]}'</Where>
+				<queryFormat>delete from %{dbtable} where %{where}</queryFormat></DbDetails><submit namelist="DbDetails"/>
+				<submit next="theftLst"/>
+			</OnClick></Button>
+		<BR/><Button Name="refreshtheft" Size="50,20" Text="刷新" >
+			<OnClick>
+				<submit next="theftLst"/>
+			</OnClick></Button>
+			</Ctrls></GroupBox>
+
+	</Ctrls></GroupBox></Ctrls>
+	</WndTap>

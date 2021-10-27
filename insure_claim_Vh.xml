@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVinsure_claim" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="insure_claimLst" ToolTip="ttp_insure_claim" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>insure.insure_claim</DbTable>
+<Index>clmid</Index>
+<Data>clmvehicleidveh,insure_claimtypeidcla,insuraid,clmincidentmileageattime,clmincidentaddressidadd,clmincidentoccured,clmamountpaidamount,clmamountpaididccy,clmlegalfeesamount,clmlegalfeesidccy,clmrecoveriesamount,clmrecoveriesidccy,clmtotallossincuredamount,clmtotallossincurredidccy,clmpolicyidpol,clmenterby,clmid</Data>
+<Order>clmid</Order></DbDetails>
+<OnClick><assign name="clmvehicleidveh[vehid]" expr="%{insure_claimLst[clmvehicleidveh]}" function="SetSel"/>
+<if cond="%{clmid}"><SetVisible name="insertinsure_claim" Visible="0"/><SetVisible name="modifyinsure_claim" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

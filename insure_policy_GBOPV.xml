@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVinsure_policy" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deleteinsure_policy" Name="deleteinsure_policy" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>insure.insure_policy</DbTable>
+<Where>polid='%{insure_policyLst[polid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchinsure_policy" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshinsure_policy" Name="searchinsure_policy" Size="50,20">
+			  <OnClick><submit next="insure_policyLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPinsure_policyLst" OnClick="(insure_policyLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PREinsure_policyLst" OnClick="(insure_policyLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPinsure_policyLst" OnClick="(insure_policyLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

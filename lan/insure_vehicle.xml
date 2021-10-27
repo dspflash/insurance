@@ -1,0 +1,156 @@
+﻿<Language name="insure_vehicle">
+<Lang name="insure_vehicle" value="车辆信息管理"/>
+<Lang name="TabEditinsure_vehicle" value="insure_vehicle Edit"/>车辆信息
+<Lang name="TabViewinsure_vehicle" value="insure_vehicle View"/>
+<Lang name="vehlicplate" value="号牌"/>
+<Lang name="ttp_vehlicplate" value=""/>
+<Lang name="vehregisterfirst" value="初登日期"/>
+<Lang name="ttp_vehregisterfirst" value=""/>
+<Lang name="vehyearofmanufacture" value="生产年份"/>
+<Lang name="ttp_vehyearofmanufacture" value="Year of vehicle's manufacture"/>
+<Lang name="vehstatus" value="车辆状态"/>
+<Lang name="ttp_vehstatus" value=""/>
+<Lang name="vehvin" value="车架号"/>
+<Lang name="ttp_vehvin" value=""/>
+<Lang name="vehbodycolor" value="车辆颜色"/>
+<Lang name="ttp_vehbodycolor" value=""/>
+<Lang name="vehengineid" value="发动机号"/>
+<Lang name="ttp_vehengineid" value=""/>
+<Lang name="vehenginesizecc" value="排量"/>
+<Lang name="ttp_vehenginesizecc" value="Vehicle Engine capacity (cc)"/>
+<Lang name="vehbodyidbod" value="车型"/>
+<Lang name="ttp_vehbodyidbod" value=""/>
+<Lang name="vehmakeidmak" value="品牌"/>
+<Lang name="ttp_vehmakeidmak" value=""/>
+<Lang name="vehmodelidmod" value="型号"/>
+<Lang name="ttp_vehmodelidmod" value=""/>
+<Lang name="vehmilage" value="行驶里程"/>
+<Lang name="ttp_vehmilage" value="Vehicle's current mileage"/>
+<Lang name="vehseatingcapacity" value="座位人数"/>
+<Lang name="ttp_vehseatingcapacity" value="vehicle seating capacity"/>
+<Lang name="vehowner" value="使用单位/个人"/>
+<Lang name="ttp_vehowner" value=""/>
+<Lang name="vehowneraddr" value="单位/个人地址"/>
+<Lang name="ttp_vehowneraddr" value=""/>
+<Lang name="vehvaluewhennewidccy" value="新车价值"/>
+<Lang name="ttp_vehvaluewhennewidccy" value=""/>
+<Lang name="vehcurrentestimatedvalueidccy" value="实际价值"/>
+<Lang name="ttp_vehcurrentestimatedvalueidccy" value=""/>
+<Lang name="vehunladedweightamount" value="空车重量"/>
+<Lang name="ttp_vehunladedweightamount" value="vehicle's unladed weight"/>
+<Lang name="vehunladedweightidwei" value="吨"/>
+<Lang name="ttp_vehunladedweightidwei" value=""/>
+<Lang name="vehmaxloadweightamount" value="满载重量"/>
+<Lang name="ttp_vehmaxloadweightamount" value="vehicle's maximum loading amount"/>
+<Lang name="vehmaxloadweightidwei" value="吨"/>
+<Lang name="ttp_vehmaxloadweightidwei" value=""/>
+<Lang name="vehpolicyidpol" value="保单号码"/>
+<Lang name="ttp_vehpolicyidpol" value=""/>
+<Lang name="vehsuminsuredlocalamount" value="保险总价"/>
+<Lang name="ttp_vehsuminsuredlocalamount" value="vehicle sum insured amount in the local currency"/>
+<Lang name="vehsuminsuredlocalidccy" value=""/>
+<Lang name="ttp_vehsuminsuredlocalidccy" value=""/>
+<Lang name="vehpremiumlocalidccy" value=""/>
+<Lang name="ttp_vehpremiumlocalidccy" value=""/>
+<Lang name="vehdaytimelocationidadd" value="白天停车地点"/>
+<Lang name="ttp_vehdaytimelocationidadd" value=""/>
+<Lang name="vehnighttimelocationidadd" value="夜间停车地点"/>
+<Lang name="ttp_vehnighttimelocationidadd" value=""/>
+<Lang name="vehalarmfitted" value="报警器"/>
+<Lang name="ttp_vehalarmfitted" value="Does vehicle have a car alarm fitted"/>
+<Lang name="vehboughtfromnew" value="非二手车"/>
+<Lang name="ttp_vehboughtfromnew" value="Was vehicle bought from new"/>
+<Lang name="vehtrackingsystemfitted" value="GPS跟踪"/>
+<Lang name="ttp_vehtrackingsystemfitted" value="is the vehicle fitted with a tracking system"/>
+<Lang name="vehcompanyvehicle" value="企事业所有"/>
+<Lang name="ttp_vehcompanyvehicle" value="Vehicle is owned by a company"/>
+<Lang name="vehrighthanddrive" value="右侧驾驶"/>
+<Lang name="ttp_vehrighthanddrive" value="Is the vehicle right-hand drive"/>
+<Lang name="vehsubjecttoloan" value="抵押贷款中"/>
+<Lang name="ttp_vehsubjecttoloan" value="Is the vehicle currently subject to an outstanding loan agreement"/>
+<Lang name="vehdriverairbagfitted" value="驾驶人安全气囊"/>
+<Lang name="ttp_vehdriverairbagfitted" value="Does the vehicle have a driver's airbag fitted"/>
+<Lang name="vehpassengerairbagfitted" value="副驾驶安全气囊"/>
+<Lang name="ttp_vehpassengerairbagfitted" value="Does the vehicle have a passenger's airbag fitted"/>
+<Lang name="vehrentalvehicle" value="租赁"/>
+<Lang name="ttp_vehrentalvehicle" value="Is vehicle a rental"/>
+<Lang name="vehtrailer" value="牵引拖车"/>
+<Lang name="ttp_vehtrailer" value="is the vehicle used for towing a trailer"/>
+<Lang name="vehcommercialvehicle" value="商用车"/>
+<Lang name="ttp_vehcommercialvehicle" value="Is this a commercial vehicle"/>
+<Lang name="vehusagebusiness" value="商务车"/>
+<Lang name="ttp_vehusagebusiness" value="is the vehicle used for business"/>
+<Lang name="vehusagecarriageofgoods" value="货运用车"/>
+<Lang name="ttp_vehusagecarriageofgoods" value="is the vehicle used for the carriage of goods"/>
+<Lang name="vehusagesocialhome" value="家用/社会车辆"/>
+<Lang name="ttp_vehusagesocialhome" value="is the vehicle used for home or socially"/>
+<Lang name="vehtoolsstroreddaytime" value="白天工具留车内"/>
+<Lang name="ttp_vehtoolsstroreddaytime" value="are tools stored in the vehicle during the daytime"/>
+<Lang name="vehtoolsstrorednighttime" value="夜里工具留车内"/>
+<Lang name="ttp_vehtoolsstrorednighttime" value="are tools stored in the vehicle during the nighttime"/>
+<Lang name="vehid" value="机动车编号"/>
+<Lang name="ttp_vehid" value="Unique Identifier"/>
+<Lang name="vehroadworthycertificate" value="上路证"/>
+<Lang name="ttp_vehroadworthycertificate" value="Does the vehicle hold a current Road worthy certificate"/>
+<Lang name="vehroadworthycertificateexpiry" value="上路证有效期"/>
+<Lang name="ttp_vehroadworthycertificateexpiry" value="Vehicle's current road worthy certificate expiry date"/>
+<Lang name="vehcoverstart" value="保险起始日"/>
+<Lang name="ttp_vehcoverstart" value="When did the cover start"/>
+<Lang name="vehcoverend" value="保险到期日"/>
+<Lang name="ttp_vehcoverend" value="When does cover end"/>
+<Lang name="vehremark" value=""/>
+<Lang name="ttp_vehremark" value=""/>
+<Lang name="insuraid" value=""/>
+<Lang name="ttp_insuraid" value=""/>
+<Lang name="vehsoundsystemidsou" value=""/>
+<Lang name="ttp_vehsoundsystemidsou" value=""/>
+<Lang name="vehparkedidpar" value=""/>
+<Lang name="ttp_vehparkedidpar" value=""/>
+<Lang name="vehaccidentidacc" value=""/>
+<Lang name="ttp_vehaccidentidacc" value=""/>
+<Lang name="vehmodifiedidmdf" value=""/>
+<Lang name="ttp_vehmodifiedidmdf" value=""/>
+<Lang name="vehriskcodeidrsk" value=""/>
+<Lang name="ttp_vehriskcodeidrsk" value=""/>
+<Lang name="vehcapacitiyvolume" value=""/>
+<Lang name="ttp_vehcapacitiyvolume" value="Vehicle's carrying capacity by volume"/>
+<Lang name="vehwhenisuredtookpossession" value=""/>
+<Lang name="ttp_vehwhenisuredtookpossession" value="what date did the insure take possession of the vehicle"/>
+<Lang name="vehsuminsuredforeignamount" value=""/>
+<Lang name="ttp_vehsuminsuredforeignamount" value="vehicle sum insured amount in the foreign currency"/>
+<Lang name="vehsuminsuredforeignidccy" value=""/>
+<Lang name="ttp_vehsuminsuredforeignidccy" value=""/>
+<Lang name="vehriskcurrencyamount" value=""/>
+<Lang name="ttp_vehriskcurrencyamount" value="vehicle risk amount"/>
+<Lang name="vehriskcurrencyidccy" value=""/>
+<Lang name="ttp_vehriskcurrencyidccy" value=""/>
+<Lang name="vehpremiumforeignamount" value=""/>
+<Lang name="ttp_vehpremiumforeignamount" value="vehicle foreign premium amount in foreign currency"/>
+<Lang name="vehpremiumforeignidccy" value=""/>
+<Lang name="ttp_vehpremiumforeignidccy" value=""/>
+<Lang name="vehcurrentestimateedvalueamount" value=""/>
+<Lang name="ttp_vehcurrentestimateedvalueamount" value="vehicle's current estimated value"/>
+<Lang name="vehpremiumlocalamount" value="保险费"/>
+<Lang name="ttp_vehpremiumlocalamount" value="vehicle premium in local currency"/>
+<Lang name="vehvaluewhennewamount" value=""/>
+<Lang name="ttp_vehvaluewhennewamount" value="value of vehicle when new"/>
+<Lang name="id_corp" value=""/>
+<Lang name="ttp_id_corp" value=""/>
+<Lang name="vehenterby" value=""/>
+<Lang name="ttp_vehenterby" value=""/>
+<Lang name="ttp_operationinsure_vehicle" value=""/>
+<Lang name="ttp_createinsure_vehicle" value=""/>
+<Lang name="ttp_modifyinsure_vehicle" value=""/>
+<Lang name="ttp_resetinsure_vehicle" value=""/>
+<Lang name="ttp_deleteinsure_vehicle" value=""/>
+<Lang name="ttp_refreshinsure_vehicle" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

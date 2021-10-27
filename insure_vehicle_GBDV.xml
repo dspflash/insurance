@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVinsure_vehicle"><Ctrls>
+<ListCtrl loadedclick="0" ToolTip="ttp_insure_vehicle" Name="insure_vehicleLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>insure.insure_vehicle</DbTable>
+<Index>vehid</Index>
+<Data>vehlicplate,vehregisterfirst,vehyearofmanufacture,vehstatus,vehvin,vehbodycolor,vehengineid,vehenginesizecc,vehbodyidbod,vehmakeidmak,vehmodelidmod,vehmilage,vehseatingcapacity,vehowner,vehowneraddr,vehvaluewhennewidccy,vehcurrentestimatedvalueidccy,vehunladedweightamount,vehunladedweightidwei,vehmaxloadweightamount,vehmaxloadweightidwei,vehpolicyidpol,vehsuminsuredlocalamount,vehsuminsuredlocalidccy,vehpremiumlocalidccy,vehdaytimelocationidadd,vehnighttimelocationidadd,vehalarmfitted,vehboughtfromnew,vehtrackingsystemfitted,vehcompanyvehicle,vehrighthanddrive,vehsubjecttoloan,vehdriverairbagfitted,vehpassengerairbagfitted,vehrentalvehicle,vehtrailer,vehcommercialvehicle,vehusagebusiness,vehusagecarriageofgoods,vehusagesocialhome,vehtoolsstroreddaytime,vehtoolsstrorednighttime,vehid,vehroadworthycertificate,vehroadworthycertificateexpiry,vehcoverstart,vehcoverend,vehremark,insuraid,vehsoundsystemidsou,vehparkedidpar,vehaccidentidacc,vehmodifiedidmdf,vehriskcodeidrsk,vehcapacitiyvolume,vehwhenisuredtookpossession,vehsuminsuredforeignamount,vehsuminsuredforeignidccy,vehriskcurrencyamount,vehriskcurrencyidccy,vehpremiumforeignamount,vehpremiumforeignidccy,vehcurrentestimateedvalueamount,vehpremiumlocalamount,vehvaluewhennewamount,id_corp,vehenterby</Data>
+<Order>vehid</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>vehid='%{insure_vehicle_vLst[vehid]}'</Where></DbDetails><submit next="$this.insure_vehicle.insure_vehicleLst" namelist="DbDetails"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>insure.insure_vehicle</DbTable>
+<Where>vehid='%{insure_vehicle_vLst[vehid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

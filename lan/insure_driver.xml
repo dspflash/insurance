@@ -1,0 +1,94 @@
+﻿<Language name="insure_driver">
+<Lang name="insure_driver" value="驾驶人信息"/>
+<Lang name="TabEditinsure_driver" value="insure_driver Edit"/>
+<Lang name="TabViewinsure_driver" value="insure_driver View"/>
+<Lang name="driname" value="驾 驶 人"/>
+<Lang name="ttp_driname" value=""/>
+<Lang name="drilicence" value="驾驶证"/>
+<Lang name="ttp_drilicence" value=""/>
+<Lang name="dridateofbirth" value="出生日期"/>
+<Lang name="ttp_dridateofbirth" value="Date of Birth"/>
+<Lang name="drimale" value="男性驾驶"/>
+<Lang name="ttp_drimale" value="Is driver male"/>
+<Lang name="drilicencedissuedidcou" value="颁发驾照国家"/>
+<Lang name="ttp_drilicencedissuedidcou" value="Country licence issued"/>
+<Lang name="drinatioinalityidnat" value="国    籍"/>
+<Lang name="ttp_drinatioinalityidnat" value="Driver nationality"/>
+<Lang name="drioccuptationidocc" value="职业"/>
+<Lang name="ttp_drioccuptationidocc" value="Driver occupatioin"/>
+<Lang name="driemploymentstatusidemp" value="在职状态"/>
+<Lang name="ttp_driemploymentstatusidemp" value="Drivers employment status"/>
+<Lang name="drimaindriver" value="该车主要驾驶员"/>
+<Lang name="ttp_drimaindriver" value="Is this the main driver"/>
+<Lang name="drivehicleowner" value="车主"/>
+<Lang name="ttp_drivehicleowner" value="Is this the vehicle owner"/>
+<Lang name="dridefectivehearing" value="听力缺陷"/>
+<Lang name="ttp_dridefectivehearing" value="Does driver have defective hearing"/>
+<Lang name="dridefectivevision" value="视力缺陷"/>
+<Lang name="ttp_dridefectivevision" value="Does driver have defective vision"/>
+<Lang name="drisufferedfits" value="SufferedFits"/>
+<Lang name="ttp_drisufferedfits" value="Does the driver suffer from fits"/>
+<Lang name="dricurrentlicenceheld" value="持有驾照"/>
+<Lang name="ttp_dricurrentlicenceheld" value="Does driver hold a current driving licence"/>
+<Lang name="drilicencefirstissued" value="首次领证日"/>
+<Lang name="ttp_drilicencefirstissued" value="Date licence first issued"/>
+<Lang name="dripasseddrivingtest" value="考试通过日"/>
+<Lang name="ttp_dripasseddrivingtest" value="Date driving test passed"/>
+<Lang name="driaverageannualmilage" value="年驾驶里程数"/>
+<Lang name="ttp_driaverageannualmilage" value="Average annual mileage"/>
+<Lang name="driyearslicenceheld" value="驾龄"/>
+<Lang name="ttp_driyearslicenceheld" value="How many years has the licence been held"/>
+<Lang name="drinumberofdrivingoffenceconvictions" value="驾  驶  罪  次  数"/>
+<Lang name="ttp_drinumberofdrivingoffenceconvictions" value="Number of driving offence convictions"/>
+<Lang name="drilastdrivingoffence" value="上次驾驶罪日"/>
+<Lang name="ttp_drilastdrivingoffence" value="Date of last driving offence"/>
+<Lang name="drinumberofcriminaloffences" value="刑事犯罪次数"/>
+<Lang name="ttp_drinumberofcriminaloffences" value="Number of criminal offences"/>
+<Lang name="drilastcriminaloffence" value="上次刑事犯罪日"/>
+<Lang name="ttp_drilastcriminaloffence" value="Date of last criminal offence"/>
+<Lang name="drinumberofmotorrelatedaccidents" value="发动机相关事故次数"/>
+<Lang name="ttp_drinumberofmotorrelatedaccidents" value="Number of motor related accidents"/>
+<Lang name="drilastmotorrelatedaccident" value="上次发动车相关事故日期"/>
+<Lang name="ttp_drilastmotorrelatedaccident" value="Date of last motor related accident"/>
+<Lang name="drinumberofmotorrelatedclaims" value="发动机相关理赔次数"/>
+<Lang name="ttp_drinumberofmotorrelatedclaims" value="Number of motor related claims"/>
+<Lang name="drilastmotorrelatedclaim" value="上次发动机相关理赔日期"/>
+<Lang name="ttp_drilastmotorrelatedclaim" value="Date of last motor related claim"/>
+<Lang name="drimotorinsurancecancelledbyinsurer" value="投保人曾取消过发动机保险"/>
+<Lang name="ttp_drimotorinsurancecancelledbyinsurer" value="Previously has motor insurance been cancelled by insurer"/>
+<Lang name="drimotorinsuranceconditionsadded" value="投保人曾有条件增加发动机保险"/>
+<Lang name="ttp_drimotorinsuranceconditionsadded" value="Previously have condition been added by insurer to the motor insurance"/>
+<Lang name="drimotorinsurancerefusedonrenewal" value="投保人曾在续保时拒绝发动机保险"/>
+<Lang name="ttp_drimotorinsurancerefusedonrenewal" value="Previously has motor insurance been refused on renewal by insurer"/>
+<Lang name="dripreviouslydeclinemotorinsurance" value="投保人曾谢绝发动机保险"/>
+<Lang name="ttp_dripreviouslydeclinemotorinsurance" value="Has been previously declined motor insurance"/>
+<Lang name="dripreviousncd" value="PreviousNCD"/>
+<Lang name="ttp_dripreviousncd" value="Previous no claims discount"/>
+<Lang name="drirequiredincreasepremium" value="需要增加保额"/>
+<Lang name="ttp_drirequiredincreasepremium" value="Has there been the need to increase the premium"/>
+<Lang name="driid" value=""/>
+<Lang name="ttp_driid" value=""/>
+<Lang name="insuraid" value=""/>
+<Lang name="ttp_insuraid" value=""/>
+<Lang name="dripolid" value=""/>
+<Lang name="ttp_dripolid" value=""/>
+<Lang name="drienterby" value=""/>
+<Lang name="ttp_drienterby" value=""/>
+<Lang name="id_corp" value=""/>
+<Lang name="ttp_id_corp" value=""/>
+<Lang name="ttp_operationinsure_driver" value=""/>
+<Lang name="ttp_createinsure_driver" value=""/>
+<Lang name="ttp_modifyinsure_driver" value=""/>
+<Lang name="ttp_resetinsure_driver" value=""/>
+<Lang name="ttp_deleteinsure_driver" value=""/>
+<Lang name="ttp_refreshinsure_driver" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

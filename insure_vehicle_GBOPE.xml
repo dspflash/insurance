@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEinsure_vehicle" Size="100,100"><Ctrls>
+<Button sqlpkinsert="vehid" Text="create" ToolTip="ttp_createinsure_vehicle" Name="insertinsure_vehicle" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>insure.insure_vehicle</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>vehlicplate,vehregisterfirst,vehyearofmanufacture,vehstatus,vehvin,vehbodycolor,vehengineid,vehenginesizecc,vehbodyidbod,vehmakeidmak,vehmodelidmod,vehmilage,vehseatingcapacity,vehowner,vehowneraddr,vehvaluewhennewidccy,vehcurrentestimatedvalueidccy,vehunladedweightamount,vehunladedweightidwei,vehmaxloadweightamount,vehmaxloadweightidwei,vehpolicyidpol,vehsuminsuredlocalamount,vehsuminsuredlocalidccy,vehpremiumlocalidccy,vehdaytimelocationidadd,vehnighttimelocationidadd,vehalarmfitted,vehboughtfromnew,vehtrackingsystemfitted,vehcompanyvehicle,vehrighthanddrive,vehsubjecttoloan,vehdriverairbagfitted,vehpassengerairbagfitted,vehrentalvehicle,vehtrailer,vehcommercialvehicle,vehusagebusiness,vehusagecarriageofgoods,vehusagesocialhome,vehtoolsstroreddaytime,vehtoolsstrorednighttime,vehroadworthycertificate,vehroadworthycertificateexpiry,vehcoverstart,vehcoverend,vehremark,insuraid,vehsoundsystemidsou,vehparkedidpar,vehaccidentidacc,vehmodifiedidmdf,vehriskcodeidrsk,vehcapacitiyvolume,vehwhenisuredtookpossession,vehsuminsuredforeignamount,vehsuminsuredforeignidccy,vehriskcurrencyamount,vehriskcurrencyidccy,vehpremiumforeignamount,vehpremiumforeignidccy,vehcurrentestimateedvalueamount,vehpremiumlocalamount,vehvaluewhennewamount,vehenterby</Data>
+<DataEx>vehid,id_corp;uuid(),1</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="insure_vehicleLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyinsure_vehicle" Name="modifyinsure_vehicle" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>insure.insure_vehicle</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>vehlicplate,vehregisterfirst,vehyearofmanufacture,vehstatus,vehvin,vehbodycolor,vehengineid,vehenginesizecc,vehbodyidbod,vehmakeidmak,vehmodelidmod,vehmilage,vehseatingcapacity,vehowner,vehowneraddr,vehvaluewhennewidccy,vehcurrentestimatedvalueidccy,vehunladedweightamount,vehunladedweightidwei,vehmaxloadweightamount,vehmaxloadweightidwei,vehpolicyidpol,vehsuminsuredlocalamount,vehsuminsuredlocalidccy,vehpremiumlocalidccy,vehdaytimelocationidadd,vehnighttimelocationidadd,vehalarmfitted,vehboughtfromnew,vehtrackingsystemfitted,vehcompanyvehicle,vehrighthanddrive,vehsubjecttoloan,vehdriverairbagfitted,vehpassengerairbagfitted,vehrentalvehicle,vehtrailer,vehcommercialvehicle,vehusagebusiness,vehusagecarriageofgoods,vehusagesocialhome,vehtoolsstroreddaytime,vehtoolsstrorednighttime,vehroadworthycertificate,vehroadworthycertificateexpiry,vehcoverstart,vehcoverend,vehremark,insuraid,vehsoundsystemidsou,vehparkedidpar,vehaccidentidacc,vehmodifiedidmdf,vehriskcodeidrsk,vehcapacitiyvolume,vehwhenisuredtookpossession,vehsuminsuredforeignamount,vehsuminsuredforeignidccy,vehriskcurrencyamount,vehriskcurrencyidccy,vehpremiumforeignamount,vehpremiumforeignidccy,vehcurrentestimateedvalueamount,vehpremiumlocalamount,vehvaluewhennewamount,vehenterby</Data>
+<DataEx/>
+<Where>vehid='%{vehid}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="insure_vehicleLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetinsure_vehicle" Name="resetinsure_vehicle" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITinsure_vehicle" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchinsure_vehicle" Name="gsearchinsure_vehicle" Size="50,20" visible="false">
+	<OnClick>
+	<search next="insure_vehicleLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITinsure_vehicle" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

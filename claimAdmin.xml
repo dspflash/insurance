@@ -1,0 +1,102 @@
+<WndTap Name="claimAdmin" Text="理赔信息管理"><Ctrls>
+<GroupBox Name="GBclaim" Size="80,20" Text="理赔信息"><Ctrls>        
+		<Label Name="lb_clmVehicleIDveh" Text="事故车辆号" Size="80,20" align="right"/> 
+		<ComboBox Name="clmVehicleIDveh" Type="2" Size="80,100" ToolTip="输入车牌号码自动搜索">
+			<OnEditChange><if cond="%{clmVehicleIDveh[windowtext]}">
+			<DbDetails fcsm="1"><queryFormat>select vehLicPlate,vehID,insuraID from test.insure_vehicle where vehLicPlate like '%%{clmVehicleIDveh[windowtext]}%'</queryFormat></DbDetails>
+			<submit next="clmVehicleIDveh" namelist="DbDetails"/>
+			</if></OnEditChange>
+			<OnSelEndOk><assign name="insuraID" expr="%{clmVehicleIDveh[insuraID]}"/><if cond="%{clmVehicleIDveh[vehID]}"><submit next="clmLst"/>
+			<else/><submit next="clmLst" function="resetcontent"/>
+			</if></OnSelEndOk>
+			</ComboBox>
+		<Label Name="lb_insure_ClaimTypeIDcla" Text="理赔类型" Size="80,20" ToolTip="" align="right"/>
+		<ComboBox Name="insure_ClaimTypeIDcla" Type="2" Size="100,120" SelectedIndex="0" Onload="init" ToolTip="amount paid in claim to insured">
+			<DbDetails><queryFormat>select nameCN from test.insure_claimtype</queryFormat></DbDetails>
+			<OnSelEndOk><if cond="%{insure_ClaimTypeIDcla[SelectedIndex]}==1">
+			<if cond="%{GBaccident[visible]}"><SetVisible name="GBaccident" Visible="0"/></if>
+			<if cond="!%{gbtheftfire[visible]}"><SetVisible name="gbtheftfire" Visible="1"/></if>
+			<else/>
+			<if cond="%{gbtheftfire[visible]}"><SetVisible name="gbtheftfire" Visible="0"/></if>
+			<if cond="!%{GBaccident[visible]}"><SetVisible name="GBaccident" Visible="1"/></if>
+			</if></OnSelEndOk></ComboBox>
+		<Button Name="addinsure_ClaimTypeIDcla" Text="新增" Size="30,20" ToolTip="增加商品目录">
+			<OnClick>
+				<if cond="!%{insure_ClaimTypeIDcla[windowtext]}"><alert expr="%{insure_ClaimTypeIDcla[windowtext]}不能为空"/>
+				<else/>
+				<DbDetails><queryFormat>insert into test.insure_claimtype (name,nameCN) values ('%{polCoverTypeIDcov[Letter]}','%{polCoverTypeIDcov[windowtext]}')</queryFormat></DbDetails><submit namelist="DbDetails"/>
+				<DbDetails/><submit next="polCoverTypeIDcov" namelist="DbDetails"/>
+				</if></OnClick>
+			</Button>
+		<BR/><Label Name="lb_insuraID" Text="投保单号" Size="80,20" align="right"/>
+		<TextBox Name="insuraID" Size="80,20"/>
+		<Label Name="lb_clmIncidentMileageAtTime" Text="车辆行驶里程" Size="80,20" ToolTip="main vehicle''s mileage at the time of the incident" align="right"/>
+		<TextBox Name="clmIncidentMileageAtTime" Size="80,20" ToolTip="main vehicle''s mileage at the time of the incident"/>
+		<BR/><Label Name="lb_clmIncidentAddressIDadd" Text="事故发生地ID" Size="80,20"/>
+		<TextBox Name="clmIncidentAddressIDadd" Size="80,20"/>
+		<Label Name="lb_clmIncidentOccured" Text="事故发生时间" Size="80,20" ToolTip="when incident occurred" align="right"/> 
+		<DateTime Name="clmIncidentOccured" Format="yyyy-MM-dd" Size="120,20" tooltip="when incident occurred"/>
+		<BR/><Label Name="lb_clmAmountPaidAmount" Text="理赔支付总额" Size="80,20" ToolTip="amount paid in claim to insured" align="right"/>
+		<TextBox Name="clmAmountPaidAmount" Size="80,20" ToolTip="amount paid in claim to insured"/>
+		<TextBox Name="clmAmountPaidIDccy"  Text="CNY" Size="30,20" ToolTip="币种"/>
+		<Label Name="lb_clmLegalFeesAmount" Text="理赔诉讼费" Size="80,20" ToolTip="legal fees incurred by claim" align="right"/> 
+		<TextBox Name="clmLegalFeesAmount" Size="80,20" ToolTip="legal fees incurred by claim"/>
+		<TextBox Name="clmLegalFeesIDccy" Text="CNY" Size="30,20" ToolTip="币种"/>
+		<BR/><Label Name="lb_clmRecoveriesAmount" Text="理赔总回收率" Size="80,20" ToolTip="total recoveries made against claim" align="right"/>
+		<TextBox Name="clmRecoveriesAmount" Size="80,20" ToolTip="total recoveries made against claim"/>
+		<TextBox Name="clmRecoveriesIDccy" Text="CNY" Size="30,20" ToolTip="币种"/>
+		<Label Name="lb_clmTotalLossIncuredAmount" Text="总损失" Size="80,20" ToolTip="total loss of claim = paid + legal -recoveries" align="right"/> 
+		<TextBox Name="clmTotalLossIncuredAmount" Size="80,20" ToolTip="total loss of claim = paid + legal -recoveries"/>
+		<TextBox Name="clmTotalLossIncurredIDccy" Text="CNY" Size="30,20" ToolTip="币种"/>
+		<TextBox Name="clmID" Visible="false" Size="20,20" ToolTip="理赔号码">
+				<DbDetails>
+					<queryFormat>select clmID from test.insure_Claim where clmVehicleIDveh='%{clmVehicleIDveh}' and clmEnterBy=%{user_code} limit 0,1</queryFormat> 
+				</DbDetails>
+			<OnEnChange><if cond="%{clmID}"><submit next="accLst"/><submit next="theftLst"/><assign name="accClaimIDclm" expr="%{clmID}"/>
+				<else/><submit next="accLst" function="resetcontent"/><submit next="theftLst" function="resetcontent"/></if></OnEnChange>
+			</TextBox>        
+
+		<BR/><ListCtrl Name="clmLst"  PageSize="10" Size="400,100" loadedclick="false" OnClick="" OnLoad="init"
+			Heading="理赔类型,100;理赔支付总额,100;理赔诉讼费,100;总损失,100;">
+			<DbDetails fcsm="1">
+				<DbTable>test.insure_Claim</DbTable>
+				<Index>d_id</Index>
+				<Data>insure_ClaimTypeIDcla, clmAmountPaidAmount, clmLegalFeesAmount,clmTotalLossIncuredAmount,clmAmountPaidIDccy,  clmLegalFeesIDccy, clmRecoveriesAmount, clmRecoveriesIDccy,  clmTotalLossIncurredIDccy, clmIncidentMileageAtTime, clmIncidentOccured, clmPolicyIDpol,clmIncidentAddressIDadd,clmID</Data>
+				<Order></Order>
+				<Where>clmVehicleIDveh='%{clmVehicleIDveh[vehID]}'</Where>
+				</DbDetails>
+			<OnClick><if cond="!%{insuLst[insura_idx]}"><submit next="properties" function="resetcontent"/><else/>
+					<submit next="properties"/>
+			</if></OnClick>
+			</ListCtrl>
+		<TAB/><GroupBox Name="GBOPClm" Size="80,20" Text="操作"><Ctrls>
+		<Button Name="insertclm"   Size="50,20" Text="添加">
+			<OnClick>
+				<DbDetails fcsm="1">
+					<data>insuraID,insure_ClaimTypeIDcla, clmAmountPaidAmount, clmAmountPaidIDccy, clmLegalFeesAmount, clmLegalFeesIDccy, clmRecoveriesAmount, clmRecoveriesIDccy, clmTotalLossIncuredAmount, clmTotalLossIncurredIDccy, clmIncidentMileageAtTime, clmIncidentOccured, clmPolicyIDpol,clmIncidentAddressIDadd</data>
+					<dataEx>clmVehicleIDveh,clmEnterBy;'%{clmVehicleIDveh[vehid]}',%{user_code}</dataEx>
+					<queryFormat>insert into test.insure_Claim %{data}</queryFormat></DbDetails><submit namelist="DbDetails"/>
+				<submit next="clmID" method="post"/><submit next="clmLst"/>
+			</OnClick></Button>
+		<Button Name="deleteclm" Size="50,20" Text="删除">
+			<OnClick>
+				<DbDetails>
+				<DbTable>test.insure_Claim</DbTable>
+				<Where>clmID='%{clmLst[clmID]}'</Where>
+				<queryFormat>delete from %{dbtable} where %{where}</queryFormat></DbDetails><submit namelist="DbDetails"/>
+				<submit next="clmLst"/>
+			</OnClick></Button>
+		<BR/><Button Name="refreshclm" Size="50,20" Text="刷新" >
+			<OnClick>
+				<submit next="clmLst"/>
+			</OnClick></Button>
+			</Ctrls></GroupBox>
+
+	</Ctrls></GroupBox>
+	<BR autoheight="1"/><xi:include href="accidentAdmin.xml" xpointer="accident" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	<xi:include href="theftfire.xml" xpointer="theftfire" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	</Ctrls>
+	<OnActivate><if cond="%{insure_ClaimTypeIDcla[SelectedIndex]}==-1">
+				<SetVisible name="GBaccident" Visible="0"/><SetVisible name="gbtheftfire" Visible="0"/>
+		</if></OnActivate>
+	</WndTap>

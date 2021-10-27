@@ -1,0 +1,17 @@
+﻿<GroupBox Name="GBDVinsure_theftfire" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="insure_theftfire_vLst" ToolTip="ttp_insure_theftfire" Size="700,420" OnLoad="init" loadedclick="0">
+	<DbDetails >
+<DbTable>insure.insure_theftfire i</DbTable>
+<Index>theid</Index>
+<Data>i.thealarmon,i.theallwindowsanddoorssecured,i.theanytoolsinvehicle,i.thekeysinvehicle,i.thekeysstolenwithvehicle,i.thelockedingarage,i.theenterby,i.theid</Data>
+<Order>theid</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>theid='%{insure_theftfire_vLst[theid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.insure_theftfire.insure_theftfireLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>insure.insure_theftfire</DbTable>
+<Where>theid='%{insure_theftfire_vLst[theid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

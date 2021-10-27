@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVinsure_claim"><Ctrls>
+<ListCtrl loadedclick="0" ToolTip="ttp_insure_claim" Name="insure_claimLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>insure.insure_claim i left join insure.insure_vehicle i0 on i.clmvehicleidveh=i0.vehid</DbTable>
+<Index>clmid</Index>
+<Data>i0.vehLicPlate clmvehicleidveh,i.insure_claimtypeidcla,i.insuraid,i.clmincidentmileageattime,i.clmincidentaddressidadd,i.clmincidentoccured,i.clmamountpaidamount,i.clmamountpaididccy,i.clmlegalfeesamount,i.clmlegalfeesidccy,i.clmrecoveriesamount,i.clmrecoveriesidccy,i.clmtotallossincuredamount,i.clmtotallossincurredidccy,i.clmpolicyidpol,i.clmenterby,i.clmid</Data>
+<Order>clmid</Order></DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="insure_claim_ops.xml"/>
+</ListCtrl>
+</Ctrls></GroupBox>

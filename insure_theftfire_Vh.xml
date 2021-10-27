@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVinsure_theftfire" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="insure_theftfireLst" ToolTip="ttp_insure_theftfire" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>insure.insure_theftfire</DbTable>
+<Index>theid</Index>
+<Data>thealarmon,theallwindowsanddoorssecured,theanytoolsinvehicle,thekeysinvehicle,thekeysstolenwithvehicle,thelockedingarage,theenterby,theid</Data>
+<Order>theid</Order></DbDetails>
+<OnClick>
+<if cond="%{theid}"><SetVisible name="insertinsure_theftfire" Visible="0"/><SetVisible name="modifyinsure_theftfire" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

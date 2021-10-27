@@ -1,0 +1,14 @@
+﻿<WndTap Name="insure_claim_v" Text="insure_claim">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="insure_claim_Ve.xml" popup="1"/>
+</WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\insure_claim.xml"/>
+<Ctrls><GroupBox  Name="GBinsure_claim" id="insure_claim" Text="insure_claim" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="insure_claim_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVinsure_claim" Size="100,20" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.insure_claim.GBDEDITinsure_claim" function="reset"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetinsure_claim" Name="resetinsure_claim" Size="50,20">	<OnClick>	<submit next="GBDEDITinsure_claim" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="gsearch" ToolTip="ttp_gsearchinsure_claim" Name="gsearchinsure_claim" Size="50,20" visible="true">	<OnClick>	<search next="insure_claim_vLst" listed="0" prefixwhere="0" inputed="1"></search><submit next="GBDEDITinsure_claim" namelist="search" function="search"/>	</OnClick>	</Button><TAB/></Ctrls></GroupBox>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="insure_claim_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

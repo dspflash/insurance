@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><WndTap Text="insure_theftfire" Name="insure_theftfire" Ver="2">
+<var name="refreshAfterEdit" expr="0"/>
+<var name="dataRequired" expr="theclaimidclm"/>
+<var name="dataRequireless" expr=""/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\insure_theftfire.xml"/>
+<Ctrls>
+<GroupBox Text="insure_theftfire" Name="GBinsure_theftfire" id="insure_theftfire" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="insure_theftfire_GBDEDIT.xml"></xi:include><BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="insure_theftfire_GBOPE.xml"></xi:include>
+<TAB/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="insure_theftfire_GBOPV.xml"></xi:include>
+<BR/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="insure_theftfire_GBDV.xml"></xi:include></Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged/>
+	<OnActivate/>
+	</WndTap>

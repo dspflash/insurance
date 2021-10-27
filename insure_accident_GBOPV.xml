@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVinsure_accident" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deleteinsure_accident" Name="deleteinsure_accident" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>insure.insure_accident</DbTable>
+<Where>accid='%{insure_accidentLst[accid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchinsure_accident" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshinsure_accident" Name="searchinsure_accident" Size="50,20">
+			  <OnClick><submit next="insure_accidentLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPinsure_accidentLst" OnClick="(insure_accidentLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PREinsure_accidentLst" OnClick="(insure_accidentLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPinsure_accidentLst" OnClick="(insure_accidentLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

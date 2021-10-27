@@ -1,0 +1,95 @@
+﻿<GroupBox Name="GBDEDITinsure_policy"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_polcovertypeidcov"><Ctrls>
+<Label Align="Right" Text="polcovertypeidcov" onload="init" Name="lb_polcovertypeidcov" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_polcovertypeidcov" onload="init" Name="polcovertypeidcov" Size="170,100">
+	<DbDetails>
+<DbTable>insure.insure_cover</DbTable>
+<Index/>
+<Data>nameCN </Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_polinsuredtypeidins"><Ctrls>
+<Label Align="Right" Text="polinsuredtypeidins" Name="lb_polinsuredtypeidins" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_polinsuredtypeidins" Items="Company|Private" Name="polinsuredtypeidins" Size="170,100"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_polreasonidrea"><Ctrls>
+<Label Align="Right" Text="polreasonidrea" Name="lb_polreasonidrea" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_polreasonidrea" Items="Direct|Marketing|Broker|Agent|Reinsurance|Banc assurance" Name="polreasonidrea" Size="170,100"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_polreplaced"><Ctrls>
+<Label Align="Right" Text="polreplaced" Name="lb_polreplaced" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_polreplaced" Name="polreplaced" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_polexternalsystemid"><Ctrls>
+<Label Align="Right" Text="polexternalsystemid" Name="lb_polexternalsystemid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_polexternalsystemid" Name="polexternalsystemid" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_polsystemid"><Ctrls>
+<Label Align="Right" Text="polsystemid" Name="lb_polsystemid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_polsystemid" Name="polsystemid" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_polinception"><Ctrls>
+<Label Align="Right" Text="polinception" Name="lb_polinception" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_polinception" Name="polinception" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_polexpiry"><Ctrls>
+<Label Align="Right" Text="polexpiry" Name="lb_polexpiry" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_polexpiry" Name="polexpiry" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_polleadinsurer"><Ctrls>
+<CheckBox Text="polleadinsurer" ToolTip="ttp_polleadinsurer" Name="polleadinsurer" Size="230,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_polcoinsurancecover"><Ctrls>
+<Label Align="Right" Text="polcoinsurancecover" Name="lb_polcoinsurancecover" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_polcoinsurancecover" Name="polcoinsurancecover" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_polfacultativecover"><Ctrls>
+<Label Align="Right" Text="polfacultativecover" Name="lb_polfacultativecover" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_polfacultativecover" Name="polfacultativecover" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_polquotashare"><Ctrls>
+<Label Align="Right" Text="polquotashare" Name="lb_polquotashare" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_polquotashare" Name="polquotashare" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_poltax"><Ctrls>
+<Label Align="Right" Text="poltax" Name="lb_poltax" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_poltax" Name="poltax" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_poluwyear"><Ctrls>
+<Label Align="Right" Text="poluwyear" Name="lb_poluwyear" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_poluwyear" Name="poluwyear" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_polgrosspremiumamount"><Ctrls>
+<Label Align="Right" Text="polgrosspremiumamount" Name="lb_polgrosspremiumamount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_polgrosspremiumamount" Name="polgrosspremiumamount" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_polgrosspremiumidccy"><Ctrls>
+<Label Align="Right" Text="polgrosspremiumidccy" Name="lb_polgrosspremiumidccy" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_polgrosspremiumidccy" Name="polgrosspremiumidccy" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_dripolicyidpol"><Ctrls>
+<Label Align="Right" Text="dripolicyidpol" Name="lb_dripolicyidpol" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_dripolicyidpol" Name="dripolicyidpol" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insuraid"><Ctrls>
+<Label Align="Right" Text="insuraid" Name="lb_insuraid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insuraid" Name="insuraid" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_id_corp"><Ctrls>
+<Label Align="Right" Text="id_corp" Name="lb_id_corp" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id_corp" Name="id_corp" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_polenterby"><Ctrls>
+<Label Align="Right" Text="polenterby" Name="lb_polenterby" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_polenterby" Name="polenterby" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_polenterat"><Ctrls>
+<Label Align="Right" Text="polenterat" Name="lb_polenterat" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_polenterat" Name="polenterat" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_polid" Visible="false"><Ctrls>
+<Label Align="Right" Text="polid" overlap="pre" Name="lb_polid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_polid" overlap="pre" Name="polid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

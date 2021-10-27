@@ -1,0 +1,76 @@
+﻿<GroupBox Name="GBDEDITinsure_accident"><Ctrls>
+<GroupBox Name="GB_accdriveriddri" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_accdriveriddri" Size="60,20" Text="accdriveriddri" Align="Right"  onload="init"/>
+<ComboBox Name="accdriveriddri" Size="170,100" Text="" Weight="170"  ToolTip="ttp_accdriveriddri"  onload="init">
+	<DbDetails>
+<DbTable>insure.insure_driver</DbTable>
+<Index>driid</Index>
+<Data>driName,driID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_accnumberofvehiclesinvolved" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_accnumberofvehiclesinvolved" Size="60,20" Text="accnumberofvehiclesinvolved" Align="Right"/>
+<TextBox Name="accnumberofvehiclesinvolved" Size="170,20" Text="" Weight="170" ToolTip="ttp_accnumberofvehiclesinvolved"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_accinjurytodriver" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="accinjurytodriver" Size="230,20" Text="accinjurytodriver" ToolTip="ttp_accinjurytodriver"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_accinsureddriving" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="accinsureddriving" Size="230,20" Text="accinsureddriving" ToolTip="ttp_accinsureddriving"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_acclightson" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="acclightson" Size="230,20" Text="acclightson" ToolTip="ttp_acclightson"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_accdriverliable" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="accdriverliable" Size="230,20" Text="accdriverliable" ToolTip="ttp_accdriverliable"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_accseatbeltsused" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="accseatbeltsused" Size="230,20" Text="accseatbeltsused" ToolTip="ttp_accseatbeltsused"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_acccarryinggoods" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="acccarryinggoods" Size="230,20" Text="acccarryinggoods" ToolTip="ttp_acccarryinggoods"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_accdriverairbagdeployed" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="accdriverairbagdeployed" Size="230,20" Text="accdriverairbagdeployed" ToolTip="ttp_accdriverairbagdeployed"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_accpassengerairbagdeployed" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="accpassengerairbagdeployed" Size="230,20" Text="accpassengerairbagdeployed" ToolTip="ttp_accpassengerairbagdeployed"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_accinjuryothervehicledrivers" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="accinjuryothervehicledrivers" Size="230,20" Text="accinjuryothervehicledrivers" ToolTip="ttp_accinjuryothervehicledrivers"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_accinjurytoothervehiclepassengers" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="accinjurytoothervehiclepassengers" Size="230,20" Text="accinjurytoothervehiclepassengers" ToolTip="ttp_accinjurytoothervehiclepassengers"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_accinjurytopassengers" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="accinjurytopassengers" Size="230,20" Text="accinjurytopassengers" ToolTip="ttp_accinjurytopassengers"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_accinjurytothirdparties" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="accinjurytothirdparties" Size="230,20" Text="accinjurytothirdparties" ToolTip="ttp_accinjurytothirdparties"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_accdamagetothirdparty" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="accdamagetothirdparty" Size="230,20" Text="accdamagetothirdparty" ToolTip="ttp_accdamagetothirdparty"></CheckBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_accpoliceprosecutingdriver" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="accpoliceprosecutingdriver" Size="230,20" Text="accpoliceprosecutingdriver" ToolTip="ttp_accpoliceprosecutingdriver"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_accpolicerecorded" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="accpolicerecorded" Size="230,20" Text="accpolicerecorded" ToolTip="ttp_accpolicerecorded"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_accpolicewitness" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<CheckBox Name="accpolicewitness" Size="230,20" Text="accpolicewitness" ToolTip="ttp_accpolicewitness"></CheckBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_accid" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_accid" Size="60,20" Text="accid" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="accid" Size="170,20" Text="" Weight="170" ToolTip="ttp_accid" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_accenterby" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_accenterby" Size="60,20" Text="accenterby" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="accenterby" Size="170,20" Text="" Weight="170" ToolTip="ttp_accenterby" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_accclaimidclm" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_accclaimidclm" Size="60,20" Text="accclaimidclm" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="accclaimidclm" Size="170,20" Text="" Weight="170" ToolTip="ttp_accclaimidclm" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

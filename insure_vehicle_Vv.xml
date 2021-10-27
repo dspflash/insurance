@@ -1,0 +1,17 @@
+﻿<GroupBox Name="GBDVinsure_vehicle" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="insure_vehicle_vLst" ToolTip="ttp_insure_vehicle" Size="700,420" OnLoad="init" loadedclick="0">
+	<DbDetails >
+<DbTable>insure.insure_vehicle i</DbTable>
+<Index>vehid</Index>
+<Data>i.vehlicplate,i.vehregisterfirst,i.vehyearofmanufacture,i.vehstatus,i.vehvin,i.vehbodycolor,i.vehengineid,i.vehenginesizecc,i.vehbodyidbod,i.vehmakeidmak,i.vehmodelidmod,i.vehmilage,i.vehseatingcapacity,i.vehowner,i.vehowneraddr,i.vehvaluewhennewidccy,i.vehcurrentestimatedvalueidccy,i.vehunladedweightamount,i.vehunladedweightidwei,i.vehmaxloadweightamount,i.vehmaxloadweightidwei,i.vehpolicyidpol,i.vehsuminsuredlocalamount,i.vehsuminsuredlocalidccy,i.vehpremiumlocalidccy,i.vehdaytimelocationidadd,i.vehnighttimelocationidadd,i.vehalarmfitted,i.vehboughtfromnew,i.vehtrackingsystemfitted,i.vehcompanyvehicle,i.vehrighthanddrive,i.vehsubjecttoloan,i.vehdriverairbagfitted,i.vehpassengerairbagfitted,i.vehrentalvehicle,i.vehtrailer,i.vehcommercialvehicle,i.vehusagebusiness,i.vehusagecarriageofgoods,i.vehusagesocialhome,i.vehtoolsstroreddaytime,i.vehtoolsstrorednighttime,i.vehid,i.vehroadworthycertificate,i.vehroadworthycertificateexpiry,i.vehcoverstart,i.vehcoverend,i.vehremark,i.insuraid,i.vehsoundsystemidsou,i.vehparkedidpar,i.vehaccidentidacc,i.vehmodifiedidmdf,i.vehriskcodeidrsk,i.vehcapacitiyvolume,i.vehwhenisuredtookpossession,i.vehsuminsuredforeignamount,i.vehsuminsuredforeignidccy,i.vehriskcurrencyamount,i.vehriskcurrencyidccy,i.vehpremiumforeignamount,i.vehpremiumforeignidccy,i.vehcurrentestimateedvalueamount,i.vehpremiumlocalamount,i.vehvaluewhennewamount,i.id_corp,i.vehenterby</Data>
+<Order>vehid</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>vehid='%{insure_vehicle_vLst[vehid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.insure_vehicle.insure_vehicleLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>insure.insure_vehicle</DbTable>
+<Where>vehid='%{insure_vehicle_vLst[vehid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

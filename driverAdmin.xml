@@ -1,0 +1,109 @@
+<WndTap Name="driverAdmin" Text="驾驶人管理"><Ctrls>
+<GroupBox Name="gbdriver" id="driver" Size="700,500" Text="驾驶人信息" overlap="GBINSURA" feature="tab"><Ctrls>        
+		<Label Name="lb_driName" Size="50,20" Text="驾 驶 人" align="right"/>
+		<TextBox Name="driName" Size="80,20" ToolTip="name of driver"/>
+		<Label Name="lb_driLicence" Size="50,20" Text="驾驶证" align="right"/>
+		<TextBox Name="driLicence" Size="80,20" ToolTip="drive licence card"/>
+		<Button Name="search_dri" Size="20,20" Text="搜" ToolTip="根据身份证号搜索投保信息">
+			<OnClick><if cond="%{driLicence}"><assign name="extdricond" expr=" and driLicence like '%%{driLicence}%'"/><DbDetails><Where>id_corp=%{id_corp}%{extdricond}</Where></DbDetails>
+				<submit namelist="DbDetails" next="driLst"/><assign name="extdricond" expr=""/></if></OnClick></Button>
+		<Label Name="lb_driDateOfBirth" Size="80,20" Text="出生日期" align="right"/>
+		<DateTime Name="driDateOfBirth" Size="80,20" ToolTip="Date of Birth" Format="yyyy-MM-dd"/>
+		<CheckBox Name="driMale" Size="80,20" Text="男性驾驶" Checked="0" ToolTip="Is driver male"/>
+		<Label Name="lb_driLicencedIssuedIDcou" Size="80,20" Text="颁发驾照国家" align="right"/>
+		<ComboBox Name="driLicencedIssuedIDcou" Type="3" Size="100,120" SelectedIndex="45" Onload="init" ToolTip="Country licence issued">
+			<DbDetails><queryFormat>select country from test.country</queryFormat></DbDetails>
+			</ComboBox>
+		<BR/><Label Name="lb_driNatioinalityIDnat" Size="50,20" Text="国    籍" align="right"/>
+		<ComboBox Name="driNatioinalityIDnat" Type="3" Size="100,120" SelectedIndex="39" Onload="init" ToolTip="Driver nationality">
+			<DbDetails><queryFormat>select name from test.nationality</queryFormat></DbDetails>
+			</ComboBox>
+		<Label Name="lb_driOccuptationIDocc" Size="50,20" Text="职业" align="right"/>
+		<ComboBox Name="driOccuptationIDocc" Type="2" Size="100,120" SelectedIndex="0" Onload="init" ToolTip="Driver occupation">
+			<DbDetails><queryFormat>select name,occ from occupation where occm</queryFormat></DbDetails>
+			</ComboBox>
+		<Label Name="lb_driEmploymentStatusIDemp" Size="50,20" Text="在职状态" align="right"/>
+		<ComboBox Name="driEmploymentStatusIDemp"  Items="在职|离职|其它" Size="50,20" SelectedIndex="0"></ComboBox>
+<BR/><CheckBox Name="driMainDriver" Size="100,20" Text="该车主要驾驶员" Checked="0" ToolTip="Is this the main driver"/>
+<CheckBox Name="driVehicleOwner" Size="80,20" Text="车主" Checked="0" ToolTip="VehicleOwner"/>
+<CheckBox Name="driDefectiveHearing" Size="80,20" Text="听力缺陷" Checked="0" ToolTip="Does driver have defective hearing"/>
+<CheckBox Name="driDefectiveVision" Size="80,20" Text="视力缺陷" Checked="0" ToolTip="Does driver have defective vision"/>
+<CheckBox Name="driSufferedFits" Size="80,20" Text="SufferedFits" Checked="0" ToolTip="Does the driver suffer from fits"/>
+<BR/><CheckBox Name="driCurrentLicenceHeld" Size="80,20" Text="持有驾照" Checked="0" ToolTip="Does driver hold a current driving licence"/>
+<Label Name="lb_driLicenceFirstIssued" Size="80,20" Text="首次领证日" align="right"/>
+<DateTime Name="driLicenceFirstIssued" Size="80,20" ToolTip="Date licence first issued" Format="yyyy-MM-dd"/>
+<Label Name="lb_driPassedDrivingTest" Size="80,20" Text="考试通过日" align="right"/>
+<DateTime Name="driPassedDrivingTest" Size="80,20" ToolTip="Date driving test passed" Format="yyyy-MM-dd"/>
+<Label Name="lb_driAverageAnnualMilage" Size="80,20" Text="年驾驶里程数" align="right"/>
+<TextBox Name="driAverageAnnualMilage" Size="80,20" ToolTip="Average annual mileage"/>
+<Label Name="lb_driYearsLicenceHeld" Size="50,20" Text="驾龄" align="right"/>
+<TextBox Name="driYearsLicenceHeld" Size="80,20" ToolTip="How many years has the licence been held"/>
+<BR/><Label Name="lb_driNumberOfDrivingOffenceConvictions" Size="120,20" Text="驾  驶  罪  次  数" align="right"/>
+<TextBox Name="driNumberOfDrivingOffenceConvictions" Size="40,20" ToolTip="驾驶罪认定次数Number of driving offence convictions"/>
+<Label Name="lb_driLastDrivingOffence" Size="80,20" Text="上次驾驶罪日" align="right"/>
+<DateTime Name="driLastDrivingOffence" Size="80,20" ToolTip="Date of last driving offence" Format="yyyy-MM-dd"/>
+<Label Name="lb_driNumberOfCriminalOffences" Size="120,20" Text="刑事犯罪次数" align="right"/>
+<TextBox Name="driNumberOfCriminalOffences" Size="40,20" ToolTip="刑事犯罪次数Number of criminal offences"/>
+<Label Name="lb_driLastCriminalOffence" Size="80,20" Text="上次日期"/>
+<DateTime Name="driLastCriminalOffence" Size="80,20" ToolTip="上次刑事犯罪日Date of last criminal offence" Format="yyyy-MM-dd"/>
+<BR/><Label Name="lb_driNumberOfMotorRelatedAccidents" Size="120,20" Text="发动机相关事故次数" align="right"/>
+<TextBox Name="driNumberOfMotorRelatedAccidents" Size="40,20" ToolTip="Number of motor related accidents"/>
+<Label Name="lb_driLastMotorRelatedAccident" Size="80,20" Text="上次日期" align="right"/>
+<DateTime Name="driLastMotorRelatedAccident" Size="80,20" ToolTip="上次发动车相关事故日期Date of last motor related accident" Format="yyyy-MM-dd"/>
+<Label Name="lb_driNumberOfMotorRelatedClaims" Size="120,20" Text="发动机相关理赔次数" align="right"/>
+<TextBox Name="driNumberOfMotorRelatedClaims" Size="40,20" ToolTip="Number of motor related claims"/>
+<Label Name="lb_driLastMotorRelatedClaim" Size="80,20" Text="上次日期" align="right"/>
+<DateTime Name="driLastMotorRelatedClaim" Size="80,20" ToolTip="上次发动机相关理赔日期Date of last motor related claim" Format="yyyy-MM-dd"/>
+<BR/><CheckBox Name="driMotorInsuranceCancelledByInsurer" Size="200,20" Text="投保人曾取消过发动机保险" Checked="0" ToolTip="Previously has motor insurance been cancelled by insurer"/>
+<CheckBox Name="driMotorInsuranceConditionsAdded" Size="200,20" Text="投保人曾有条件增加发动机保险" Checked="0" ToolTip="Previously have condition been added by insurer to the motor insurance"/>
+<CheckBox Name="driMotorInsuranceRefusedOnRenewal" Size="200,20" Text="投保人曾在续保时拒绝发动机保险" Checked="0" ToolTip="Previously has motor insurance been refused on renewal by insurer"/>
+<BR/><CheckBox Name="driPreviouslyDeclineMotorInsurance" Size="200,20" Text="投保人曾谢绝发动机保险" Checked="0" ToolTip="Has been previously declined motor insurance"/>
+<CheckBox Name="driPreviousNCD" Size="200,20" Text="PreviousNCD" Checked="0" ToolTip="Previous no claims discount"/>
+<Label Name="lb_driRequiredIncreasePremium" Size="80,20" Text="需要增加保额" align="right"/>
+<TextBox Name="driRequiredIncreasePremium" Size="80,20" ToolTip="Has there been the need to increase the premium"/>
+			<TextBox Name="driID" Visible="false" Size="20,20" ToolTip="驾驶人ID">
+				<DbDetails>
+					<queryFormat>select driID from test.insure_driver where driName='%{driName}' and driEnterBy=%{user_code} limit 0,1</queryFormat> 
+				</DbDetails>
+				<OnEnChange><assign name="session.driid" expr="%{driID}"/>
+				<!--if cond="%{c_id}"><DbDetails></DbDetails><submit next="HistoryList" namelist="DbDetails" method="post"/><submit next="OrderList" namelist="DbDetails" method="post"/>
+				<assign name="CB_eyeill" expr="-1" function="SetSel"/>
+				<else/><submit next="OrderList" method="post" function="resetcontent"/><submit next="HistoryList" method="post" function="resetcontent"/></if-->
+				</OnEnChange>
+			</TextBox>
+
+		<BR/><ListCtrl Name="driLst"  PageSize="10" Size="400,100" loadedclick="false" OnClick="" OnLoad="init"
+					Heading="驾驶人,100;驾驶证,100;年驾驶里程数,100;首次领证日,100;">
+			<DbDetails fcsm="1">
+				<DbTable>test.insure_driver</DbTable>
+				<Index>d_id</Index>
+				<Data>driName, driLicence, driAverageAnnualMilage,driLicenceFirstIssued, driMainDriver, driPassedDrivingTest, driVehicleOwner, driYearsLicenceHeld, driDateOfBirth, driDefectiveHearing, driDefectiveVision, driMale, driLastCriminalOffence, driLastDrivingOffence, driLastMotorRelatedAccident, driLastMotorRelatedClaim, driMotorInsuranceCancelledByInsurer, driMotorInsuranceConditionsAdded, driMotorInsuranceRefusedOnRenewal, driNumberOfCriminalOffences, driNumberOfDrivingOffenceConvictions, driNumberOfMotorRelatedAccidents, driNumberOfMotorRelatedClaims, driPreviouslyDeclineMotorInsurance, driPreviousNCD, driRequiredIncreasePremium, driSufferedFits, driCurrentLicenceHeld, driLicencedIssuedIDcou, driNatioinalityIDnat, driOccuptationIDocc, driEmploymentStatusIDemp,driID</Data>
+				<Order></Order>
+				<Where>id_corp=%{id_corp}%{extentcond}%{extdricond}</Where>
+				</DbDetails>
+			</ListCtrl>
+		<TAB/><GroupBox Name="GBOP" Size="80,20" Text="操作"><Ctrls>
+		<Button Name="insertdri"   Size="50,20" Text="添加">
+			<OnClick>
+				<DbDetails fcsm="1">
+					<data>driName, driLicence, driAverageAnnualMilage,driLicenceFirstIssued, driMainDriver, driPassedDrivingTest, driVehicleOwner, driYearsLicenceHeld, driDateOfBirth, driDefectiveHearing, driDefectiveVision, driMale, driLastCriminalOffence, driLastDrivingOffence, driLastMotorRelatedAccident, driLastMotorRelatedClaim, driMotorInsuranceCancelledByInsurer, driMotorInsuranceConditionsAdded, driMotorInsuranceRefusedOnRenewal, driNumberOfCriminalOffences, driNumberOfDrivingOffenceConvictions, driNumberOfMotorRelatedAccidents, driNumberOfMotorRelatedClaims, driPreviouslyDeclineMotorInsurance, driPreviousNCD, driRequiredIncreasePremium, driSufferedFits, driCurrentLicenceHeld, driLicencedIssuedIDcou, driNatioinalityIDnat, driOccuptationIDocc, driEmploymentStatusIDemp</data>
+					<dataEx>driEnterBy,insuraID,id_corp;%{user_code},'%{session.insid}',%{id_corp}</dataEx>
+					<queryFormat>insert into test.insure_driver %{data}</queryFormat></DbDetails><submit namelist="DbDetails"/>
+				<submit next="driID"/><submit next="refreshdri" function="click"/>
+			</OnClick></Button>
+		<Button Name="deletedri" Size="50,20" Text="删除">
+			<OnClick>
+				<DbDetails>
+				<DbTable>test.insure_driver</DbTable>
+				<Where>driID='%{driLst[driID]}'</Where>
+				<queryFormat>delete from %{dbtable} where %{where}</queryFormat></DbDetails><submit namelist="DbDetails"/>
+				<submit next="refreshdri" function="click"/>
+			</OnClick></Button>
+		<BR/><Button Name="refreshdri" Size="50,20" Text="刷新" >
+			<OnClick><DbDetails><Where>id_corp=%{id_corp}%{extentcond}</Where></DbDetails>
+				<submit namelist="DbDetails" next="driLst"/>
+			</OnClick></Button>
+			</Ctrls></GroupBox>
+
+	</Ctrls></GroupBox></Ctrls>
+	</WndTap>

@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEinsure_accident" Size="100,100"><Ctrls>
+<Button sqlpkinsert="accid" Text="create" ToolTip="ttp_createinsure_accident" Name="insertinsure_accident" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>insure.insure_accident</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>accdriveriddri[driid],accnumberofvehiclesinvolved,accinjurytodriver,accinsureddriving,acclightson,accdriverliable,accseatbeltsused,acccarryinggoods,accdriverairbagdeployed,accpassengerairbagdeployed,accinjuryothervehicledrivers,accinjurytoothervehiclepassengers,accinjurytopassengers,accinjurytothirdparties,accdamagetothirdparty,accpoliceprosecutingdriver,accpolicerecorded,accpolicewitness</Data>
+<DataEx>accid,accenterby,accclaimidclm;uuid(),'%{user_id}',uuid()</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="insure_accidentLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyinsure_accident" Name="modifyinsure_accident" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>insure.insure_accident</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>accdriveriddri[driid],accnumberofvehiclesinvolved,accinjurytodriver,accinsureddriving,acclightson,accdriverliable,accseatbeltsused,acccarryinggoods,accdriverairbagdeployed,accpassengerairbagdeployed,accinjuryothervehicledrivers,accinjurytoothervehiclepassengers,accinjurytopassengers,accinjurytothirdparties,accdamagetothirdparty,accpoliceprosecutingdriver,accpolicerecorded,accpolicewitness</Data>
+<DataEx/>
+<Where>accid='%{accid}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="insure_accidentLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetinsure_accident" Name="resetinsure_accident" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITinsure_accident" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchinsure_accident" Name="gsearchinsure_accident" Size="50,20" visible="false">
+	<OnClick>
+	<search next="insure_accidentLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITinsure_accident" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

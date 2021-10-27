@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVinsure_driver"><Ctrls>
+<ListCtrl loadedclick="0" ToolTip="ttp_insure_driver" Name="insure_driverLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>insure.insure_driver i left join mylayout.occupation m on i.drioccuptationidocc=m.occ</DbTable>
+<Index>driid</Index>
+<Data>i.driname,i.drilicence,i.dridateofbirth,i.drimale,i.drilicencedissuedidcou,i.drinatioinalityidnat,m.name drioccuptationidocc,i.driemploymentstatusidemp,i.drimaindriver,i.drivehicleowner,i.dridefectivehearing,i.dridefectivevision,i.drisufferedfits,i.dricurrentlicenceheld,i.drilicencefirstissued,i.dripasseddrivingtest,i.driaverageannualmilage,i.driyearslicenceheld,i.drinumberofdrivingoffenceconvictions,i.drilastdrivingoffence,i.drinumberofcriminaloffences,i.drilastcriminaloffence,i.drinumberofmotorrelatedaccidents,i.drilastmotorrelatedaccident,i.drinumberofmotorrelatedclaims,i.drilastmotorrelatedclaim,i.drimotorinsurancecancelledbyinsurer,i.drimotorinsuranceconditionsadded,i.drimotorinsurancerefusedonrenewal,i.dripreviouslydeclinemotorinsurance,i.dripreviousncd,i.drirequiredincreasepremium,i.driid,i.insuraid,i.dripolid,i.drienterby,i.id_corp</Data>
+<Order>driid</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>driid='%{insure_driver_vLst[driid]}'</Where></DbDetails><submit next="$this.insure_driver.insure_driverLst" namelist="DbDetails"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>insure.insure_driver</DbTable>
+<Where>driid='%{insure_driver_vLst[driid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><BXML debug="1">
+	<DbDetails>
+		<SubDriver>MySQL ODBC 3.51 Driver</SubDriver>
+		<Host>localhost</Host>
+		<database>insure</database>
+		<sqlMode>NO_BACKSLASH_ESCAPES</sqlMode>
+		<User>i3u</User>
+		<password>i3u</password>
+		
+		</DbDetails>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\general.xml"/>	
+<WndTaps>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="insure_insurances_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="insure_policy_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="insure_driver_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="insure_vehicle_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="insure_claim_vm.xml"></xi:include>
+	</WndTaps>
+</BXML>

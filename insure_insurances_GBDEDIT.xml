@@ -1,0 +1,186 @@
+﻿<GroupBox Name="GBDEDITinsure_insurances"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_vehid"><Ctrls>
+<Label Align="Right" Text="insura_vehid" Name="lb_insura_vehid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_vehid" Name="insura_vehid" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_code"><Ctrls>
+<Label Align="Right" Text="insura_code" Name="lb_insura_code" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_code" Name="insura_code" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_insured"><Ctrls>
+<Label Align="Right" Text="insura_insured" Name="lb_insura_insured" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_insured" Name="insura_insured" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_idcardnum"><Ctrls>
+<Label Align="Right" Text="insura_idcardnum" Name="lb_insura_idcardnum" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_idcardnum" Name="insura_idcardnum" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_policyholders"><Ctrls>
+<Label Align="Right" Text="insura_policyholders" Name="lb_insura_policyholders" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_policyholders" Name="insura_policyholders" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_departresp"><Ctrls>
+<Label Align="Right" Text="insura_departresp" onload="init" Name="lb_insura_departresp" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_insura_departresp" onload="init" Name="insura_departresp" Size="170,100">
+	<DbDetails>
+<DbTable>mylayout.bizdep</DbTable>
+<Index>dep_id</Index>
+<Data>dep_name_cn,dep_id</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_infosource"><Ctrls>
+<Label Align="Right" Text="insura_infosource" Name="lb_insura_infosource" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_insura_infosource" Items="Direct|Marketing|Broker|Agent|Reinsurance|Banc assurance" Name="insura_infosource" Size="170,100"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_industry4work"><Ctrls>
+<Label Align="Right" Text="insura_industry4work" Name="lb_insura_industry4work" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_industry4work" Name="insura_industry4work" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_sex"><Ctrls>
+<Label Align="Right" Text="insura_sex" Name="lb_insura_sex" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_insura_sex" Items="男|女" Name="insura_sex" Size="170,100"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_age"><Ctrls>
+<Label Align="Right" Text="insura_age" Name="lb_insura_age" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_age" Name="insura_age" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_married"><Ctrls>
+<Label Align="Right" Text="insura_married" Name="lb_insura_married" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_insura_married" Items="已婚|未婚|离异|其它" Name="insura_married" Size="170,100"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_birthday"><Ctrls>
+<Label Align="Right" Text="insura_birthday" Name="lb_insura_birthday" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_insura_birthday" Name="insura_birthday" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_interests"><Ctrls>
+<Label Align="Right" Text="insura_interests" Name="lb_insura_interests" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_interests" Name="insura_interests" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_dt_inception"><Ctrls>
+<Label Align="Right" Text="insura_dt_inception" Name="lb_insura_dt_inception" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_insura_dt_inception" Name="insura_dt_inception" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_dt_due"><Ctrls>
+<Label Align="Right" Text="insura_dt_due" Name="lb_insura_dt_due" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_insura_dt_due" Name="insura_dt_due" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_insurfirm"><Ctrls>
+<Label Align="Right" Text="insura_insurfirm" Name="lb_insura_insurfirm" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_insurfirm" Name="insura_insurfirm" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_contact"><Ctrls>
+<Label Align="Right" Text="insura_contact" Name="lb_insura_contact" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_contact" Name="insura_contact" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_addr4contact"><Ctrls>
+<Label Align="Right" Text="insura_addr4contact" Name="lb_insura_addr4contact" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_addr4contact" Name="insura_addr4contact" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_phone"><Ctrls>
+<Label Align="Right" Text="insura_phone" Name="lb_insura_phone" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_insura_phone" Name="insura_phone" Size="150,20"/>
+<MagicCtrl ToolTip="DialToCall" Name="dialinsura_phone" OnClick="nis3ucs:%{insura_phone}" images=" ,data/startcall_green.png" button="type:0" Size="20,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_premiumsreceivable"><Ctrls>
+<Label Align="Right" Text="insura_premiumsreceivable" Name="lb_insura_premiumsreceivable" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_premiumsreceivable" Name="insura_premiumsreceivable" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_preferential"><Ctrls>
+<Label Align="Right" Text="insura_preferential" Name="lb_insura_preferential" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_preferential" Name="insura_preferential" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_preferentialreal"><Ctrls>
+<Label Align="Right" Text="insura_preferentialreal" Name="lb_insura_preferentialreal" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_preferentialreal" Name="insura_preferentialreal" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_premiums"><Ctrls>
+<Label Align="Right" Text="insura_premiums" Name="lb_insura_premiums" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_premiums" Name="insura_premiums" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_premiumsreceived"><Ctrls>
+<Label Align="Right" Text="insura_premiumsreceived" Name="lb_insura_premiumsreceived" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_premiumsreceived" Name="insura_premiumsreceived" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_traveltax"><Ctrls>
+<Label Align="Right" Text="insura_traveltax" Name="lb_insura_traveltax" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_traveltax" Name="insura_traveltax" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_checkmark"><Ctrls>
+<Label Align="Right" Text="insura_checkmark" Name="lb_insura_checkmark" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_checkmark" Name="insura_checkmark" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_invoiceno"><Ctrls>
+<Label Align="Right" Text="insura_invoiceno" Name="lb_insura_invoiceno" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_invoiceno" Name="insura_invoiceno" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_paystatus"><Ctrls>
+<CheckBox Text="insura_paystatus" ToolTip="ttp_insura_paystatus" Name="insura_paystatus" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_paydt"><Ctrls>
+<Label Align="Right" Text="insura_paydt" Name="lb_insura_paydt" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_insura_paydt" Name="insura_paydt" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_paymethod"><Ctrls>
+<Label Align="Right" Text="insura_paymethod" onload="init" Name="lb_insura_paymethod" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_insura_paymethod" onload="init" Name="insura_paymethod" Size="170,100">
+	<DbDetails>
+<DbTable>mylayout.paymentmethod</DbTable>
+<Index>idx</Index>
+<Data>name,idx</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_isgroupedbuy"><Ctrls>
+<CheckBox Text="insura_isgroupedbuy" ToolTip="ttp_insura_isgroupedbuy" Name="insura_isgroupedbuy" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_iswithdraw"><Ctrls>
+<CheckBox Text="insura_iswithdraw" ToolTip="ttp_insura_iswithdraw" Name="insura_iswithdraw" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_reasonwithdraw"><Ctrls>
+<Label Align="Right" Text="insura_reasonwithdraw" Name="lb_insura_reasonwithdraw" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_reasonwithdraw" Name="insura_reasonwithdraw" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_amountwithdraw"><Ctrls>
+<Label Align="Right" Text="insura_amountwithdraw" Name="lb_insura_amountwithdraw" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_amountwithdraw" Name="insura_amountwithdraw" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_dtwithdraw"><Ctrls>
+<Label Align="Right" Text="insura_dtwithdraw" Name="lb_insura_dtwithdraw" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_insura_dtwithdraw" Name="insura_dtwithdraw" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_saleman"><Ctrls>
+<Label Align="Right" Text="insura_saleman" Name="lb_insura_saleman" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_saleman" Name="insura_saleman" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_recommended"><Ctrls>
+<Label Align="Right" Text="insura_recommended" Name="lb_insura_recommended" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_recommended" Name="insura_recommended" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_responsible"><Ctrls>
+<Label Align="Right" Text="insura_responsible" onload="init" Name="lb_insura_responsible" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_insura_responsible" onload="init" Name="insura_responsible" Size="170,100">
+	<DbDetails>
+<DbTable>mylayout.userlogin</DbTable>
+<Index>user_code</Index>
+<Data>user_name,user_code</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insura_remark"><Ctrls>
+<Label Align="Right" Text="insura_remark" Name="lb_insura_remark" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_remark" Name="insura_remark" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_insura_enteredby" Visible="false"><Ctrls>
+<Label Align="Right" Text="insura_enteredby" overlap="pre" Name="lb_insura_enteredby" readonly="true" Size="60,20" Visible="false"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_insura_enteredby" overlap="pre" Items="user_name,user_code as code" Name="insura_enteredby" readonly="true" Size="170,100" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_id_corp" Visible="false"><Ctrls>
+<Label Align="Right" Text="id_corp" overlap="pre" Name="lb_id_corp" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id_corp" overlap="pre" Name="id_corp" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_insura_idx" Visible="false"><Ctrls>
+<Label Align="Right" Text="insura_idx" overlap="pre" Name="lb_insura_idx" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insura_idx" overlap="pre" Name="insura_idx" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{insura_idx}'"><SetVisible name="insertinsure_insurances" Visible="0"/><SetVisible name="modifyinsure_insurances" Visible="1"/><else/><SetVisible name="insertinsure_insurances" Visible="1"/><SetVisible name="modifyinsure_insurances" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

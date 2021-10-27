@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPVinsure_driver" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deleteinsure_driver" Name="deleteinsure_driver" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>insure.insure_driver</DbTable>
+<Where>driid='%{insure_driverLst[driid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchinsure_driver" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshinsure_driver" Name="searchinsure_driver" Size="50,20">
+			  <OnClick><submit next="insure_driverLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPinsure_driverLst" OnClick="(insure_driverLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PREinsure_driverLst" OnClick="(insure_driverLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPinsure_driverLst" OnClick="(insure_driverLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

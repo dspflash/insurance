@@ -1,0 +1,76 @@
+<WndTap Name="accidentAdmin" Text="事故信息管理"><Ctrls>
+<GroupBox Name="GBaccident" id="accident" Size="80,20" Text="事故信息"><Ctrls>        
+		<Label Name="lb_accClaimIDclm" Size="50,20" Text="理赔单号" align="right"/>
+		<TextBox Name="accClaimIDclm" Size="150,20"/>
+		<Label Name="lb_accDriverIDdri" Size="50,20" Text="驾驶员ID" align="right"/>
+		<ComboBox Name="accDriverIDdri" Type="2" Size="150,100" ToolTip="输入驾驶员ID自动搜索">
+			<OnEditChange><if cond="%{accDriverIDdri[windowtext]}">
+			<DbDetails fcsm="1"><queryFormat>select driName,driID from test.insure_driver where driLicence like '%%{accDriverIDdri[windowtext]}%'</queryFormat></DbDetails>
+			<submit next="accDriverIDdri" namelist="DbDetails"/>
+			</if></OnEditChange>
+			</ComboBox>
+		<Label Name="lb_accNumberOfVehiclesInvolved" Size="80,20" Text="涉事故车辆数" align="right"/>
+		<TextBox Name="accNumberOfVehiclesInvolved"	Size="30,20" ToolTip="How many vehicles were involved in the accident"/>
+		<BR/><CheckBox Name="accInjuryToDriver" Size="150,20" Text="驾驶员是否受伤" Checked="0" ToolTip="Was there injury to the driver"/>
+		<CheckBox Name="accInsuredDriving" Size="150,20" Text="保险范围内驾驶" Checked="0" ToolTip="Was a named insured from the policy driving"/>
+		<CheckBox Name="accLightsOn" Size="150,20" Text="车灯能亮" Checked="0" ToolTip="Were the lights on after light up time"/>
+		<CheckBox Name="accDriverLiable" Size="150,20" Text="司机对事故负有责任" Checked="0" ToolTip="Is the driver liable for the accident"/>
+		<BR/><CheckBox Name="accSeatBeltsUsed" Size="150,20" Text="是否系安全带" Checked="0" ToolTip="Were the seatbelts in use at the time of the accident."/>
+		<CheckBox Name="accCarryingGoods" Size="150,20" Text="是否载货" Checked="0" ToolTip="Were good being carried at time of accident"/>
+		<CheckBox Name="accDriverAirbagDeployed" Size="150,20" Text="驾驶员安全气囊弹出" Checked="0" ToolTip="Did the driver airbags deploy"/>
+		<CheckBox Name="accPassengerAirbagDeployed" Size="150,20" Text="乘客安全气囊弹出" Checked="0" ToolTip="Did passenger airbag(s) deploy"/>
+		<BR/><CheckBox Name="accInjuryOtherVehicleDrivers" Size="150,20" Text="其他车辆驾驶员受伤" Checked="0" ToolTip="Was there injury sustained by any other vehicles driver"/>
+		<CheckBox Name="accInjuryToOtherVehiclePassengers" Size="150,20" Text="造成其他车辆乘客受伤" Checked="0" ToolTip="Was there any injury sustained by any of the other vehicles passengers"/>
+		<CheckBox Name="accInjuryToPassengers" Size="150,20" Text="造成乘客受伤" Checked="0" ToolTip="Was there any injury sustained by the other vehicles passengers"/>
+		<CheckBox Name="accInjuryToThirdParties" Size="150,20" Text="造成第三方伤害" Checked="0" ToolTip="Was there any injury sustained by any of the other third parties"/>
+		<BR/><CheckBox Name="accDamageToThirdParty" Size="150,20" Text="损害第三方" Checked="0" ToolTip="Was there damage to a third party"/>
+		<CheckBox Name="accPoliceProsecutingDriver" Size="150,20" Text="警察是否控诉驾驶员" Checked="0" ToolTip="Are the police prosecuting driver due to this accident"/>
+		<CheckBox Name="accPoliceRecorded" Size="150,20" Text="警局时候备案事故" Checked="0" ToolTip="Was this accident recorded by the police"/>
+		<CheckBox Name="accPoliceWitness" Size="150,20" Text="警方目击事故" Checked="0" ToolTip="Did the police witness the accident"/>
+		<TextBox Name="accID" Visible="false" Size="20,20" ToolTip="保单号码">
+				<DbDetails>
+					<queryFormat>select accID from test.insure_accident where accClaimIDclm='%{clmID}' and accEnterBy=%{user_code} limit 0,1</queryFormat> 
+				</DbDetails>
+			<!--OnEnChange><if cond="%{c_id}"><DbDetails></DbDetails><submit next="HistoryList" namelist="DbDetails" method="post"/><submit next="OrderList" namelist="DbDetails" method="post"/>
+				<assign name="CB_eyeill" expr="-1" function="SetSel"/>
+				<else/><submit next="OrderList" method="post" function="resetcontent"/><submit next="HistoryList" method="post" function="resetcontent"/></if></OnEnChange-->
+			</TextBox>        
+
+		<BR/><ListCtrl Name="accLst"  PageSize="10" Size="400,100" loadedclick="false" OnClick="" OnLoad="init"
+			Heading="是否载货,100;损害第三方,100;驾驶员安全气囊弹出,100;司机对事故负有责任,100;">
+			<DbDetails fcsm="1">
+				<DbTable>test.insure_accident</DbTable>
+				<Index>d_id</Index>
+				<Data>accCarryingGoods, accDamageToThirdParty,accDriverAirbagDeployed, accDriverLiable, accInjuryToDriver, accInjuryOtherVehicleDrivers, accInjuryToOtherVehiclePassengers, accInjuryToPassengers, accInjuryToThirdParties, accInsuredDriving, accLightsOn, accNumberOfVehiclesInvolved, accPassengerAirbagDeployed, accPoliceProsecutingDriver, accPoliceRecorded, accPoliceWitness, accSeatBeltsUsed,accID</Data>
+				<Order></Order>
+				<Where>accClaimIDclm='%{clmID}'</Where>
+				</DbDetails>
+			<OnClick><if cond="!%{polLst[insura_idx]}"><submit next="properties" function="resetcontent"/><else/>
+					<submit next="properties"/>
+			</if></OnClick>
+			</ListCtrl>
+		<TAB/><GroupBox Name="GBOPAcc" Size="80,20" Text="操作"><Ctrls>
+		<Button Name="insertAcc" Size="50,20" Text="添加">
+			<OnClick>
+				<DbDetails fcsm="1">
+					<data>accCarryingGoods, accDamageToThirdParty,accDriverAirbagDeployed, accDriverLiable, accInjuryToDriver, accInjuryOtherVehicleDrivers, accInjuryToOtherVehiclePassengers, accInjuryToPassengers, accInjuryToThirdParties, accInsuredDriving, accLightsOn, accNumberOfVehiclesInvolved, accPassengerAirbagDeployed, accPoliceProsecutingDriver, accPoliceRecorded, accPoliceWitness, accSeatBeltsUsed</data>
+					<dataEx>accDriverIDdri,accClaimIDclm,accEnterBy;'%{session.driid}','%{clmID}',%{user_code}</dataEx>
+					<queryFormat>insert into test.insure_accident %{data}</queryFormat></DbDetails><submit namelist="DbDetails"/>
+				<submit next="accID"/><submit next="accLst"/>
+			</OnClick></Button>
+		<Button Name="deleteAcc" Size="50,20" Text="删除">
+			<OnClick>
+				<DbDetails>
+				<DbTable>test.insure_accident</DbTable>
+				<Where>accID='%{accLst[accID]}'</Where>
+				<queryFormat>delete from %{dbtable} where %{where}</queryFormat></DbDetails><submit namelist="DbDetails"/>
+				<submit next="accLst"/>
+			</OnClick></Button>
+		<BR/><Button Name="refreshAcc" Size="50,20" Text="刷新" >
+			<OnClick>
+				<submit next="accLst"/>
+			</OnClick></Button>
+			</Ctrls></GroupBox>
+
+	</Ctrls></GroupBox></Ctrls>
+	</WndTap>

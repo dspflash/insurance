@@ -1,0 +1,196 @@
+<WndTap Name="vehicleAdmin" Text="投保信息管理"><Ctrls>
+	<var name="extentcond" expr=""/>
+	<GroupBox Name="GBINSURA" Size="700,500" Text="投保信息" feature="tab"><Ctrls>        
+		<Label Name="lb_insura_Insured"  Text="被保险人" Size="60,20" align="right"/>
+		<TextBox Name="insura_Insured" Size="80,20"/>        
+		<Label Name="lb_insura_IDCARDNUM"  Text="身份证号码" Size="60,20" align="right"/>  
+		<TextBox Name="insura_IDCARDNUM" Size="120,20"/>
+		<Button Name="search_n" Size="20,20" Text="搜" ToolTip="根据身份证号搜索投保信息">
+			<OnClick><if cond="%{insura_IDCARDNUM}"><assign name="extinscond" expr=" and insura_IDCARDNUM like '%%{insura_IDCARDNUM}%'"/><DbDetails><Where>id_corp=%{id_corp}%{extinscond}</Where></DbDetails>
+				<submit next="insuLst"/><assign name="extinscond" expr=""/></if></OnClick></Button>
+		<Label Name="lb_insura_Policyholders"  Text="投保人" Size="60,20" align="right"/> 
+		<TextBox Name="insura_Policyholders" Size="80,20"/>
+		<Label Name="lb_insura_departResp"  Text="归口部门" Size="60,20" align="right"/>
+		<ComboBox Name="insura_departResp" Type="3" Size="80,120" SelectedIndex="-1" Onload="init">
+			<DbDetails><queryFormat>select dep_name_cn,dep_id from bizdep</queryFormat></DbDetails>
+			</ComboBox>
+		<Label Name="lb_insura_infoSource"  Text="业务来源" Size="60,20" align="right"/>
+		<ComboBox Name="insura_infoSource"  Items="Direct|Marketing|Broker|Agent|Reinsurance|Banc assurance" Size="80,20" SelectedIndex="1" ToolTip="Business Source e.g.?Direct, Marketing, Broker, Agent, Reinsurance, Banc assurance)"></ComboBox>
+		<BR/><Label Name="lb_insura_industry4work"  Text="工作行业" Size="60,20" align="right"/>
+		<TextBox Name="insura_industry4work" Size="80,20"/>
+		<Label Name="lb_insura_sex"  Text="性别" Size="30,20" align="right"/>
+		<ComboBox Name="insura_sex"  Items="男|女" Size="40,20" SelectedIndex="1"></ComboBox>
+		<Label Name="lb_insura_age"  Text="年龄" Size="30,20" align="right"/>
+		<TextBox Name="insura_age" Size="20,20"/>        
+		<Label Name="lb_insura_married"  Text="婚姻" Size="30,20" align="right"/>
+		<ComboBox Name="insura_married"  Items="已婚|未婚|离异|其它" Size="50,20" SelectedIndex="1"></ComboBox>
+		<Label Name="lb_insura_birthday"  Text="出生日期" Size="60,20" align="right"/>
+		<DateTime Name="insura_birthday" Format="yyyy-MM-dd" Size="80,20" tooltip="出生日期"/>
+		<Label Name="lb_insura_Interests"  Text="兴趣爱好" Size="60,20" align="right"/>
+		<TextBox Name="insura_Interests" Size="80,20"/>
+		<BR/><Label Name="lb_insura_dt_inception"  Text="投保日期" Size="60,20" align="right"/>
+		<DateTime Name="insura_dt_inception" Format="yyyy-MM-dd" Size="80,20" tooltip="投保日期"/>
+		<Label Name="lb_insura_dt_due"  Text="保险到期日" Size="60,20" align="right"/>  
+		<DateTime Name="insura_dt_due" Format="yyyy-MM-dd" Size="80,20" tooltip="保险起始日"/>
+		<Label Name="lb_insura_insurFirm"  Text="承保公司" Size="60,20" align="right"/>
+		<TextBox Name="insura_insurFirm" Size="80,20"/>        
+		<BR/><Label Name="lb_insura_contact"  Text="联系人姓名" Size="60,20" align="right"/>  
+		<TextBox Name="insura_contact" Size="80,20"/>        
+		<Label Name="lb_insura_addr4contact"  Text="联系地址" Size="60,20" align="right"/>
+		<TextBox Name="insura_addr4contact" Size="80,20"/>
+		<Label Name="lb_insura_phone"  Text="联系电话" Size="60,20" align="right"/>
+		<TextBox Name="insura_phone" Size="80,20"/>
+		<MagicCtrl Name="dialinsura_phone" button="type:0" Link="tip:呼叫" images="data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{insura_phone}"/>
+		<BR/><Label Name="lb_insura_premiumsReceivable"  Text="应收保费" Size="60,20" align="right"/>
+		<TextBox Name="insura_premiumsReceivable" Size="80,20"/>
+		<Label Name="lb_insura_preferential"  Text="应付优惠" Size="60,20" align="right"/>
+		<TextBox Name="insura_preferential" Size="80,20"/>
+		<Label Name="lb_insura_preferentialReal"  Text="优惠" Size="60,20" align="right"/>
+		<TextBox Name="insura_preferentialReal" Size="80,20"/>        
+		<Label Name="lb_insura_premiums"  Text="应付保费" Size="60,20" align="right"/>
+		<TextBox Name="insura_premiums" Size="80,20"/>
+		<Label Name="lb_insura_premiumsReceived"  Text="实收保费" Size="60,20" align="right"/>
+		<TextBox Name="insura_premiumsReceived" Size="80,20"/>        
+		<BR/><Label Name="lb_insura_Traveltax"  Text="车  船  税" Size="60,20" align="right"/> 
+		<TextBox Name="insura_Traveltax" Size="80,20"/>
+		<Label Name="lb_insura_Checkmark"  Text="签印号" Size="60,20" align="right"/> 
+		<TextBox Name="insura_Checkmark" Size="80,20"/>
+		<Label Name="lb_insura_InvoiceNo"  Text="发票号" Size="60,20" align="right"/> 
+		<TextBox Name="insura_InvoiceNo" Size="80,20"/>
+		<BR/><CheckBox Name="insura_paystatus"  Text="保费是否交纳" Size="100,20" Checked="0" align="right"/>
+		<Label Name="lb_insura_paydt"  Text="保费交纳时间" Size="80,20" align="right"/>
+		<DateTime Name="insura_paydt" Format="yyyy-MM-dd HH:mm" Size="120,20" tooltip="保费交纳时间"/>
+		<Label Name="lb_insura_paymethod"  Text="付费方式" Size="60,20" align="right"/>
+		<ComboBox Name="insura_paymethod" Type="3" Size="60,100" SelectedIndex="0" Onload="init">
+			<DbDetails>
+				<queryFormat>select name,idx from paymentmethod</queryFormat> 
+				</DbDetails>
+				</ComboBox>
+		<CheckBox Name="insura_isGroupedBuy"  Text="是否团单" Size="80,20" Checked="0" align="right"/>
+		<BR/><CheckBox Name="insura_isWithdraw"  Text="是否退保" Size="80,20" Checked="0" align="right"/>
+		<Label Name="lb_insura_reasonWithdraw"  Text="退保原因" Size="60,20" align="right"/>
+		<TextBox Name="insura_reasonWithdraw" Size="80,20"/>
+		<Label Name="lb_insura_amountWithdraw"  Text="退保金额" Size="60,20" align="right"/>
+		<TextBox Name="insura_amountWithdraw" Size="80,20"/>
+		<Label Name="lb_insura_dtWithdraw"  Text="退保日期" Size="60,20" align="right"/>
+		<DateTime Name="insura_dtWithdraw" Format="yyyy-MM-dd" Size="120,20" tooltip="退保日期"/>
+		<BR/><Label Name="lb_insura_saleman"  Text="业务员" Size="60,20" align="right"/> 
+		<TextBox Name="insura_saleman" Size="80,20"/>
+		<Label Name="lb_insura_Recommended"  Text="推荐人" Size="60,20" align="right"/> 
+		<TextBox Name="insura_Recommended" Size="80,20"/>
+		<Label Name="lb_insura_responsible"  Text="经办人" Size="60,20" align="right"/> 
+		<ComboBox Name="insura_responsible" Size="100,100" Type="2" OnLoad="init" SelectedIndex="0" tooltip="可以根据输入文字自动搜索相关用户">
+				<DbDetails>
+					<DbTable>userlogin</DbTable>
+					<Data>user_name,user_code as code</Data>
+					<Where>user_name like '%%{groupuserLst[WindowText]}%'</Where>
+					</DbDetails>
+				<OnEditChange>
+					<DbDetails>
+					<DbTable>userlogin</DbTable>
+					<Data>user_name,user_code as code</Data>
+					</DbDetails>
+					<submit namelist="DbDetails" method="post"/>
+				</OnEditChange>
+				</ComboBox>
+		<Label Name="lb_insura_enteredby"  Text="登录者" Size="60,20" align="right"/> 
+		<ComboBox Name="insura_enteredby" Size="100,100" Type="2" OnLoad="init" SelectedIndex="0" tooltip="可以根据输入文字自动搜索相关用户">
+				<DbDetails>
+					<DbTable>userlogin</DbTable>
+					<Data>user_name,user_code as code</Data>
+					<Where>user_name like '%%{groupuserLst[WindowText]}%'</Where>
+					</DbDetails>
+				<OnEditChange>
+					<DbDetails>
+					<DbTable>userlogin</DbTable>
+					<Data>user_name,user_code as code</Data>
+					</DbDetails>
+					<submit namelist="DbDetails" method="post"/>
+				</OnEditChange>
+				</ComboBox>
+		<BR/><Label Name="lb_insura_remark"  Text="备注" Size="60,20" align="right"/>  
+		<TextBox Name="insura_remark" Size="580,20"/>
+		<TextBox Name="insura_idx" Visible="0" Size="20,20" ToolTip="投保单号码">
+			<DbDetails>
+				<queryFormat>select insura_idx from test.insure_insurances where insura_IDCARDNUM='%{insura_IDCARDNUM}' and id_corp=%{id_corp} limit 0,1</queryFormat> 
+				</DbDetails>
+			<OnEnChange><assign name="session.insid" expr="%{insura_idx}"/><assign name="extentcond" expr=" and insuraID='%{session.insid}'"/></OnEnChange>
+			</TextBox>        
+		<!--Label Name="lb_insura_vehID"  Text="机动车编号" Size="60,20" align="right"/>
+		<TextBox Name="insura_vehID" Size="80,20"/-->        
+
+		<BR/><ListCtrl Name="insuLst"  PageSize="10" Size="400,100" loadedclick="false" OnClick="" OnLoad="init"
+			Heading="被保险人,100;身份证号码,100;投保人,100;归口部门,100;">
+			<DbDetails fcsm="1">
+				<DbTable>test.insure_insurances</DbTable>
+				<Index>d_id</Index>
+				<Data>insura_Insured,insura_IDCARDNUM,insura_Policyholders, insura_departResp,insura_code, insura_isGroupedBuy, insura_infoSource,insura_vehID, insura_dt_inception, insura_dt_due,insura_insurFirm,  insura_contact,insura_sex, insura_age, insura_married,insura_phone, insura_industry4work, insura_addr4contact, insura_birthday, insura_Interests,insura_responsible,insura_paystatus, insura_paydt, insura_paymethod,insura_enteredby, insura_premiumsReceivable,insura_preferential, insura_preferentialReal,insura_premiums, insura_premiumsReceived,insura_isWithdraw, insura_reasonWithdraw,insura_dtWithdraw, insura_amountWithdraw,insura_Traveltax, insura_Checkmark, insura_InvoiceNo,insura_saleman, insura_Recommended, insura_remark,insura_idx</Data>
+				<Order></Order>
+				<Where>id_corp=%{id_corp}%{extinscond}</Where>
+				</DbDetails>
+			<OnClick><if cond="!%{insuLst[insura_idx]}"><submit next="properties" function="resetcontent"/><else/>
+					<submit next="properties"/>
+			</if></OnClick>
+			</ListCtrl>
+		<TAB/><GroupBox Name="GBOP" Size="80,20" Text="操作"><Ctrls>
+		<Button Name="insertinsura"   Size="50,20" Text="添加">
+			<OnClick><if cond="!%{insura_IDCARDNUM}"><alert expr="%{lb_insura_IDCARDNUM}不能为空！"/>
+			<else/>
+				<DbDetails fcsm="1">
+					<data>insura_code, insura_isGroupedBuy,insura_departResp, insura_infoSource,insura_vehID, insura_dt_inception, insura_dt_due,insura_insurFirm, insura_Insured, insura_contact,insura_sex, insura_age, insura_married,insura_phone, insura_industry4work, insura_addr4contact,insura_IDCARDNUM, insura_birthday, insura_Interests,insura_Policyholders, insura_responsible,insura_paystatus, insura_paydt, insura_paymethod,insura_enteredby, insura_premiumsReceivable,insura_preferential, insura_preferentialReal,insura_premiums, insura_premiumsReceived,insura_isWithdraw, insura_reasonWithdraw,insura_dtWithdraw, insura_amountWithdraw,insura_Traveltax, insura_Checkmark, insura_InvoiceNo,insura_saleman, insura_Recommended, insura_remark</data>
+					<dataEx>id_corp;%{id_corp}</dataEx>
+					<queryFormat>insert into test.insure_insurances %{data}</queryFormat></DbDetails><submit namelist="DbDetails"/>
+				<submit next="insura_idx"/><submit next="refreshinsura" function="click"/>
+				</if>
+			</OnClick></Button>
+		<Button Name="deleteinsura" Size="50,20" Text="删除">
+			<OnClick>
+				<DbDetails>
+				<DbTable>test.insure_insurances</DbTable>
+				<Where>insura_idx='%{insuLst[insura_idx]}'</Where>
+				<queryFormat>delete from %{dbtable} where %{where}</queryFormat></DbDetails><submit namelist="DbDetails"/>
+				<submit next="refreshinsura" function="click"/>
+			</OnClick></Button>
+		<BR/><Button Name="refreshinsura" Size="50,20" Text="刷新">
+			<OnClick><DbDetails><Where>id_corp=%{id_corp}%{extinscond}</Where></DbDetails>
+				<submit namelist="DbDetails" next="insuLst"/>
+			</OnClick></Button>
+		<Button Name="Add2Do" Size="50,20" Text="新任务">
+			<OnClick><if cond="%{insura_idx}"><DbDetails><Where>where insura_idx=%{insura_idx}</Where></DbDetails><submit next="todo.related2" namelist="DbDetails"/>
+			<submit next="todo.NewToDo" function="click"/><assign name="todo.related2" expr="%{insura_Insured}" function="SetSel"/></if></OnClick></Button>
+			</Ctrls></GroupBox>
+		</Ctrls></GroupBox>
+	<xi:include href="polAdmin.xml" xpointer="policy" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	<xi:include href="driverAdmin.xml" xpointer="driver" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	<xi:include href="vehicleAdmin.xml" xpointer="vehicle" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	<BR AutoHeight="1"/>
+		<TAB/><Button Name="selins" Size="50,20" Text="投保信息" Enabled="0">
+			<OnClick><SetVisible name="GBpol" Visible="0"/><SetVisible name="gbdriver" Visible="0"/>
+				<SetVisible name="GBVEH" Visible="0"/><SetVisible name="GBINSURA" Visible="1"/><submit next="selenablebtn" function="click"/>
+			</OnClick></Button>
+		<Button Name="selveh" Size="50,20" Text="机动车">
+			<OnClick><SetVisible name="GBpol" Visible="0"/><SetVisible name="gbdriver" Visible="0"/>
+				<SetVisible name="GBINSURA" Visible="0"/><SetVisible name="GBVEH" Visible="1"/>
+				<submit next="selenablebtn" function="click"/><submit next="vehLst"/>
+			</OnClick></Button>
+		<Button Name="seldri" Size="50,20" Text="驾驶人">
+			<OnClick><SetVisible name="GBpol" Visible="0"/><SetVisible name="GBINSURA" Visible="0"/>
+				<SetVisible name="GBVEH" Visible="0"/><SetVisible name="gbdriver" Visible="1"/>
+				<submit next="selenablebtn" function="click"/><submit next="driLst"/>
+			</OnClick></Button>
+		<Button Name="selpol" Size="50,20" Text="保单险标">
+			<OnClick><SetVisible name="GBINSURA" Visible="0"/><SetVisible name="gbdriver" Visible="0"/>
+				<SetVisible name="GBVEH" Visible="0"/><SetVisible name="GBpol" Visible="1"/>
+				<submit next="selenablebtn" function="click"/><submit next="polLst"/>
+			</OnClick></Button>
+		<Button Name="selenablebtn" visible="0" Size="50,20" Text="使能选择按钮">
+			<OnClick><SetEnabled  name="selins" enabled="1-%{GBINSURA[visible]}"/><SetEnabled  name="seldri" enabled="1-%{gbdriver[visible]}"/>
+				<SetEnabled  name="selveh" enabled="1-%{GBVEH[visible]}"/><SetEnabled  name="selpol" enabled="1-%{GBpol[visible]}"/>
+			</OnClick></Button>
+	</Ctrls>
+	<OnActivate><if cond="%{GBINSURA[visible]}">
+				<SetVisible name="GBpol" Visible="0"/>
+				<SetVisible name="gbdriver" Visible="0"/>
+				<SetVisible name="GBVEH" Visible="0"/>
+		</if></OnActivate>
+</WndTap>

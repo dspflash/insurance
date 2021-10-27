@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEinsure_driver" Size="100,100"><Ctrls>
+<Button sqlpkinsert="driid" Text="create" ToolTip="ttp_createinsure_driver" Name="insertinsure_driver" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>insure.insure_driver</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>driname,drilicence,dridateofbirth,drimale,drilicencedissuedidcou,drinatioinalityidnat,drioccuptationidocc[occ],driemploymentstatusidemp,drimaindriver,drivehicleowner,dridefectivehearing,dridefectivevision,drisufferedfits,dricurrentlicenceheld,drilicencefirstissued,dripasseddrivingtest,driaverageannualmilage,driyearslicenceheld,drinumberofdrivingoffenceconvictions,drilastdrivingoffence,drinumberofcriminaloffences,drilastcriminaloffence,drinumberofmotorrelatedaccidents,drilastmotorrelatedaccident,drinumberofmotorrelatedclaims,drilastmotorrelatedclaim,drimotorinsurancecancelledbyinsurer,drimotorinsuranceconditionsadded,drimotorinsurancerefusedonrenewal,dripreviouslydeclinemotorinsurance,dripreviousncd,drirequiredincreasepremium,insuraid,dripolid,drienterby,id_corp</Data>
+<DataEx>driid;uuid()</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="insure_driverLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyinsure_driver" Name="modifyinsure_driver" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>insure.insure_driver</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>driname,drilicence,dridateofbirth,drimale,drilicencedissuedidcou,drinatioinalityidnat,drioccuptationidocc[occ],driemploymentstatusidemp,drimaindriver,drivehicleowner,dridefectivehearing,dridefectivevision,drisufferedfits,dricurrentlicenceheld,drilicencefirstissued,dripasseddrivingtest,driaverageannualmilage,driyearslicenceheld,drinumberofdrivingoffenceconvictions,drilastdrivingoffence,drinumberofcriminaloffences,drilastcriminaloffence,drinumberofmotorrelatedaccidents,drilastmotorrelatedaccident,drinumberofmotorrelatedclaims,drilastmotorrelatedclaim,drimotorinsurancecancelledbyinsurer,drimotorinsuranceconditionsadded,drimotorinsurancerefusedonrenewal,dripreviouslydeclinemotorinsurance,dripreviousncd,drirequiredincreasepremium,insuraid,dripolid,drienterby,id_corp</Data>
+<DataEx/>
+<Where>driid='%{driid}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="insure_driverLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetinsure_driver" Name="resetinsure_driver" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITinsure_driver" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchinsure_driver" Name="gsearchinsure_driver" Size="50,20" visible="false">
+	<OnClick>
+	<search next="insure_driverLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITinsure_driver" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

@@ -1,0 +1,32 @@
+﻿<GroupBox Name="GBDEDITinsure_theftfire"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_thealarmon"><Ctrls>
+<CheckBox Text="thealarmon" ToolTip="ttp_thealarmon" Name="thealarmon" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_theallwindowsanddoorssecured"><Ctrls>
+<CheckBox Text="theallwindowsanddoorssecured" ToolTip="ttp_theallwindowsanddoorssecured" Name="theallwindowsanddoorssecured" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_theanytoolsinvehicle"><Ctrls>
+<CheckBox Text="theanytoolsinvehicle" ToolTip="ttp_theanytoolsinvehicle" Name="theanytoolsinvehicle" Size="230,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_thekeysinvehicle"><Ctrls>
+<CheckBox Text="thekeysinvehicle" ToolTip="ttp_thekeysinvehicle" Name="thekeysinvehicle" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_thekeysstolenwithvehicle"><Ctrls>
+<CheckBox Text="thekeysstolenwithvehicle" ToolTip="ttp_thekeysstolenwithvehicle" Name="thekeysstolenwithvehicle" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_thelockedingarage"><Ctrls>
+<CheckBox Text="thelockedingarage" ToolTip="ttp_thelockedingarage" Name="thelockedingarage" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_theclaimidclm" Visible="false"><Ctrls>
+<Label Align="Right" Text="theclaimidclm" overlap="pre" Name="lb_theclaimidclm" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_theclaimidclm" overlap="pre" Name="theclaimidclm" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_theenterby" Visible="false"><Ctrls>
+<Label Align="Right" Text="theenterby" overlap="pre" Name="lb_theenterby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_theenterby" overlap="pre" Name="theenterby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_theid" Visible="false"><Ctrls>
+<Label Align="Right" Text="theid" overlap="pre" Name="lb_theid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_theid" overlap="pre" Name="theid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

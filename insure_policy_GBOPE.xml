@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEinsure_policy" Size="100,100"><Ctrls>
+<Button sqlpkinsert="polid" Text="create" ToolTip="ttp_createinsure_policy" Name="insertinsure_policy" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>insure.insure_policy</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>polcovertypeidcov,polinsuredtypeidins,polreasonidrea,polreplaced,polexternalsystemid,polsystemid,polinception,polexpiry,polleadinsurer,polcoinsurancecover,polfacultativecover,polquotashare,poltax,poluwyear,polgrosspremiumamount,polgrosspremiumidccy,dripolicyidpol,insuraid,id_corp,polenterby,polenterat</Data>
+<DataEx>polid;uuid()</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="insure_policyLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyinsure_policy" Name="modifyinsure_policy" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>insure.insure_policy</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>polcovertypeidcov,polinsuredtypeidins,polreasonidrea,polreplaced,polexternalsystemid,polsystemid,polinception,polexpiry,polleadinsurer,polcoinsurancecover,polfacultativecover,polquotashare,poltax,poluwyear,polgrosspremiumamount,polgrosspremiumidccy,dripolicyidpol,insuraid,id_corp,polenterby,polenterat</Data>
+<DataEx/>
+<Where>polid='%{polid}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="insure_policyLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetinsure_policy" Name="resetinsure_policy" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITinsure_policy" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchinsure_policy" Name="gsearchinsure_policy" Size="50,20" visible="false">
+	<OnClick>
+	<search next="insure_policyLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITinsure_policy" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

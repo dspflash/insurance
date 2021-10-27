@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVinsure_vehicle" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="insure_vehicleLst" ToolTip="ttp_insure_vehicle" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>insure.insure_vehicle</DbTable>
+<Index>vehid</Index>
+<Data>vehlicplate,vehregisterfirst,vehyearofmanufacture,vehstatus,vehvin,vehbodycolor,vehengineid,vehenginesizecc,vehbodyidbod,vehmakeidmak,vehmodelidmod,vehmilage,vehseatingcapacity,vehowner,vehowneraddr,vehvaluewhennewidccy,vehcurrentestimatedvalueidccy,vehunladedweightamount,vehunladedweightidwei,vehmaxloadweightamount,vehmaxloadweightidwei,vehpolicyidpol,vehsuminsuredlocalamount,vehsuminsuredlocalidccy,vehpremiumlocalidccy,vehdaytimelocationidadd,vehnighttimelocationidadd,vehalarmfitted,vehboughtfromnew,vehtrackingsystemfitted,vehcompanyvehicle,vehrighthanddrive,vehsubjecttoloan,vehdriverairbagfitted,vehpassengerairbagfitted,vehrentalvehicle,vehtrailer,vehcommercialvehicle,vehusagebusiness,vehusagecarriageofgoods,vehusagesocialhome,vehtoolsstroreddaytime,vehtoolsstrorednighttime,vehid,vehroadworthycertificate,vehroadworthycertificateexpiry,vehcoverstart,vehcoverend,vehremark,insuraid,vehsoundsystemidsou,vehparkedidpar,vehaccidentidacc,vehmodifiedidmdf,vehriskcodeidrsk,vehcapacitiyvolume,vehwhenisuredtookpossession,vehsuminsuredforeignamount,vehsuminsuredforeignidccy,vehriskcurrencyamount,vehriskcurrencyidccy,vehpremiumforeignamount,vehpremiumforeignidccy,vehcurrentestimateedvalueamount,vehpremiumlocalamount,vehvaluewhennewamount,id_corp,vehenterby</Data>
+<Order>vehid</Order></DbDetails>
+<OnClick>
+<if cond="%{vehid}"><SetVisible name="insertinsure_vehicle" Visible="0"/><SetVisible name="modifyinsure_vehicle" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

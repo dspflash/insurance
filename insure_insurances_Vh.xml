@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVinsure_insurances" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="insure_insurancesLst" ToolTip="ttp_insure_insurances" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>insure.insure_insurances</DbTable>
+<Index>insura_idx</Index>
+<Data>insura_vehid,insura_code,insura_insured,insura_idcardnum,insura_policyholders,insura_departresp,insura_infosource,insura_industry4work,insura_sex,insura_age,insura_married,insura_birthday,insura_interests,insura_dt_inception,insura_dt_due,insura_insurfirm,insura_contact,insura_addr4contact,insura_phone,insura_premiumsreceivable,insura_preferential,insura_preferentialreal,insura_premiums,insura_premiumsreceived,insura_traveltax,insura_checkmark,insura_invoiceno,insura_paystatus,insura_paydt,insura_paymethod,insura_isgroupedbuy,insura_iswithdraw,insura_reasonwithdraw,insura_amountwithdraw,insura_dtwithdraw,insura_saleman,insura_recommended,insura_responsible,insura_remark,insura_enteredby,id_corp,insura_idx</Data>
+<Order>insura_idx</Order></DbDetails>
+<OnClick><assign name="insura_departresp[dep_id]" expr="%{insure_insurancesLst[insura_departresp]}" function="SetSel"/><assign name="insura_paymethod[idx]" expr="%{insure_insurancesLst[insura_paymethod]}" function="SetSel"/><assign name="insura_responsible[user_code]" expr="%{insure_insurancesLst[insura_responsible]}" function="SetSel"/>
+<if cond="%{insura_idx}"><SetVisible name="insertinsure_insurances" Visible="0"/><SetVisible name="modifyinsure_insurances" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

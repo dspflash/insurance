@@ -1,0 +1,62 @@
+﻿<Language name="事故信息管理">
+<Lang name="insure_accident" value="insure_accident"/>
+<Lang name="TabEditinsure_accident" value="insure_accident Edit"/>
+<Lang name="TabViewinsure_accident" value="insure_accident View"/>
+<Lang name="accclaimidclm" value="理赔单号"/>
+<Lang name="ttp_accclaimidclm" value=""/>
+<Lang name="accdriveriddri" value="驾驶员ID"/>
+<Lang name="ttp_accdriveriddri" value=""/>
+<Lang name="accnumberofvehiclesinvolved" value="涉事故车辆数"/>
+<Lang name="ttp_accnumberofvehiclesinvolved" value="How many vehicles were involved in the accident"/>
+<Lang name="accinjurytodriver" value="驾驶员是否受伤"/>
+<Lang name="ttp_accinjurytodriver" value="Was there injury to the driver"/>
+<Lang name="accinsureddriving" value="保险范围内驾驶"/>
+<Lang name="ttp_accinsureddriving" value="Was a named insured from the policy driving"/>
+<Lang name="acclightson" value="车灯能亮"/>
+<Lang name="ttp_acclightson" value="Were the lights on after light up time"/>
+<Lang name="accdriverliable" value="司机对事故负有责任"/>
+<Lang name="ttp_accdriverliable" value="Is the driver liable for the accident"/>
+<Lang name="accseatbeltsused" value="是否系安全带"/>
+<Lang name="ttp_accseatbeltsused" value="Were the seatbelts in use at the time of the accident."/>
+<Lang name="acccarryinggoods" value="是否载货"/>
+<Lang name="ttp_acccarryinggoods" value="Were good being carried at time of accident"/>
+<Lang name="accdriverairbagdeployed" value="驾驶员安全气囊弹出"/>
+<Lang name="ttp_accdriverairbagdeployed" value="Did the driver airbags deploy"/>
+<Lang name="accpassengerairbagdeployed" value="乘客安全气囊弹出"/>
+<Lang name="ttp_accpassengerairbagdeployed" value="Did passenger airbag(s) deploy"/>
+<Lang name="accinjuryothervehicledrivers" value="其他车辆驾驶员受伤"/>
+<Lang name="ttp_accinjuryothervehicledrivers" value="Was there injury sustained by any other vehicles driver"/>
+<Lang name="accinjurytoothervehiclepassengers" value="造成其他车辆乘客受伤"/>
+<Lang name="ttp_accinjurytoothervehiclepassengers" value="Was there any injury sustained by any of the other vehicles passengers"/>
+<Lang name="accinjurytopassengers" value="造成乘客受伤"/>
+<Lang name="ttp_accinjurytopassengers" value="Was there any injury sustained by the other vehicles passengers"/>
+<Lang name="accinjurytothirdparties" value="造成第三方伤害"/>
+<Lang name="ttp_accinjurytothirdparties" value="Was there any injury sustained by any of the other third parties"/>
+<Lang name="accdamagetothirdparty" value="损害第三方"/>
+<Lang name="ttp_accdamagetothirdparty" value="Was there damage to a third party"/>
+<Lang name="accpoliceprosecutingdriver" value="警察是否控诉驾驶员"/>
+<Lang name="ttp_accpoliceprosecutingdriver" value="Are the police prosecuting driver due to this accident"/>
+<Lang name="accpolicerecorded" value="警局时候备案事故"/>
+<Lang name="ttp_accpolicerecorded" value="Was this accident recorded by the police"/>
+<Lang name="accpolicewitness" value="警方目击事故"/>
+<Lang name="ttp_accpolicewitness" value="Did the police witness the accident"/>
+<Lang name="accid" value=""/>
+<Lang name="ttp_accid" value=""/>
+<Lang name="accenterby" value=""/>
+<Lang name="ttp_accenterby" value=""/>
+<Lang name="ttp_operationinsure_accident" value=""/>
+<Lang name="ttp_createinsure_accident" value=""/>
+<Lang name="ttp_modifyinsure_accident" value=""/>
+<Lang name="ttp_resetinsure_accident" value=""/>
+<Lang name="ttp_deleteinsure_accident" value=""/>
+<Lang name="ttp_refreshinsure_accident" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

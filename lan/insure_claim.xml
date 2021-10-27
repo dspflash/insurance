@@ -1,0 +1,54 @@
+﻿<Language name="insure_claim">
+<Lang name="insure_claim" value="理赔信息管理"/>
+<Lang name="TabEditinsure_claim" value="insure_claim Edit"/>
+<Lang name="TabViewinsure_claim" value="insure_claim View"/>
+<Lang name="clmvehicleidveh" value="事故车辆号"/>
+<Lang name="ttp_clmvehicleidveh" value=""/>
+<Lang name="insure_claimtypeidcla" value="理赔类型"/>
+<Lang name="ttp_insure_claimtypeidcla" value=""/>
+<Lang name="insuraid" value="投保单号"/>
+<Lang name="ttp_insuraid" value=""/>
+<Lang name="clmincidentmileageattime" value="车辆行驶里程"/>
+<Lang name="ttp_clmincidentmileageattime" value="main vehicle's mileage at the time of the incident"/>
+<Lang name="clmincidentaddressidadd" value="事故发生地ID"/>
+<Lang name="ttp_clmincidentaddressidadd" value=""/>
+<Lang name="clmincidentoccured" value="事故发生时间"/>
+<Lang name="ttp_clmincidentoccured" value="when incident occurred"/>
+<Lang name="clmamountpaidamount" value="理赔支付总额"/>
+<Lang name="ttp_clmamountpaidamount" value="amount paid in claim to insured"/>
+<Lang name="clmamountpaididccy" value="CNY"/>
+<Lang name="ttp_clmamountpaididccy" value=""/>
+<Lang name="clmlegalfeesamount" value="理赔诉讼费"/>
+<Lang name="ttp_clmlegalfeesamount" value="legal fees incurred by claim"/>
+<Lang name="clmlegalfeesidccy" value=""/>
+<Lang name="ttp_clmlegalfeesidccy" value=""/>
+<Lang name="clmrecoveriesamount" value="理赔总回收率"/>
+<Lang name="ttp_clmrecoveriesamount" value="total recoveries made against claim"/>
+<Lang name="clmrecoveriesidccy" value=""/>
+<Lang name="ttp_clmrecoveriesidccy" value=""/>
+<Lang name="clmtotallossincuredamount" value="总损失"/>
+<Lang name="ttp_clmtotallossincuredamount" value="total loss of claim = paid + legal -recoveries"/>
+<Lang name="clmtotallossincurredidccy" value=""/>
+<Lang name="ttp_clmtotallossincurredidccy" value=""/>
+<Lang name="clmpolicyidpol" value=""/>
+<Lang name="ttp_clmpolicyidpol" value=""/>
+<Lang name="clmenterby" value=""/>
+<Lang name="ttp_clmenterby" value=""/>
+<Lang name="clmid" value="理赔号码"/>
+<Lang name="ttp_clmid" value=""/>
+<Lang name="ttp_operationinsure_claim" value=""/>
+<Lang name="ttp_createinsure_claim" value=""/>
+<Lang name="ttp_modifyinsure_claim" value=""/>
+<Lang name="ttp_resetinsure_claim" value=""/>
+<Lang name="ttp_deleteinsure_claim" value=""/>
+<Lang name="ttp_refreshinsure_claim" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

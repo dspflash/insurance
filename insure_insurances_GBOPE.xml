@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPEinsure_insurances" Size="100,100"><Ctrls>
+<Button sqlpkinsert="insura_idx" Text="create" ToolTip="ttp_createinsure_insurances" Name="insertinsure_insurances" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>insure.insure_insurances</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>insura_vehid,insura_code,insura_insured,insura_idcardnum,insura_policyholders,insura_departresp[dep_id],insura_infosource,insura_industry4work,insura_sex,insura_age,insura_married,insura_birthday,insura_interests,insura_dt_inception,insura_dt_due,insura_insurfirm,insura_contact,insura_addr4contact,insura_phone,insura_premiumsreceivable,insura_preferential,insura_preferentialreal,insura_premiums,insura_premiumsreceived,insura_traveltax,insura_checkmark,insura_invoiceno,insura_paystatus,insura_paydt,insura_paymethod[idx],insura_isgroupedbuy,insura_iswithdraw,insura_reasonwithdraw,insura_amountwithdraw,insura_dtwithdraw,insura_saleman,insura_recommended,insura_responsible[user_code],insura_remark</Data>
+<DataEx>insura_enteredby,id_corp;'%{user_id}',1</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="insure_insurancesLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyinsure_insurances" Name="modifyinsure_insurances" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>insure.insure_insurances</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>insura_vehid,insura_code,insura_insured,insura_idcardnum,insura_policyholders,insura_departresp[dep_id],insura_infosource,insura_industry4work,insura_sex,insura_age,insura_married,insura_birthday,insura_interests,insura_dt_inception,insura_dt_due,insura_insurfirm,insura_contact,insura_addr4contact,insura_phone,insura_premiumsreceivable,insura_preferential,insura_preferentialreal,insura_premiums,insura_premiumsreceived,insura_traveltax,insura_checkmark,insura_invoiceno,insura_paystatus,insura_paydt,insura_paymethod[idx],insura_isgroupedbuy,insura_iswithdraw,insura_reasonwithdraw,insura_amountwithdraw,insura_dtwithdraw,insura_saleman,insura_recommended,insura_responsible[user_code],insura_remark</Data>
+<DataEx/>
+<Where>insura_idx='%{insura_idx}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}"><submit next="insure_insurancesLst"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetinsure_insurances" Name="resetinsure_insurances" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITinsure_insurances" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchinsure_insurances" Name="gsearchinsure_insurances" Size="50,20" visible="false">
+	<OnClick>
+	<search next="insure_insurancesLst" listed="0" prefixwhere="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITinsure_insurances" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

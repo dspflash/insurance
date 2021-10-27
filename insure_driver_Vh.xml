@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVinsure_driver" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="insure_driverLst" ToolTip="ttp_insure_driver" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>insure.insure_driver</DbTable>
+<Index>driid</Index>
+<Data>driname,drilicence,dridateofbirth,drimale,drilicencedissuedidcou,drinatioinalityidnat,drioccuptationidocc,driemploymentstatusidemp,drimaindriver,drivehicleowner,dridefectivehearing,dridefectivevision,drisufferedfits,dricurrentlicenceheld,drilicencefirstissued,dripasseddrivingtest,driaverageannualmilage,driyearslicenceheld,drinumberofdrivingoffenceconvictions,drilastdrivingoffence,drinumberofcriminaloffences,drilastcriminaloffence,drinumberofmotorrelatedaccidents,drilastmotorrelatedaccident,drinumberofmotorrelatedclaims,drilastmotorrelatedclaim,drimotorinsurancecancelledbyinsurer,drimotorinsuranceconditionsadded,drimotorinsurancerefusedonrenewal,dripreviouslydeclinemotorinsurance,dripreviousncd,drirequiredincreasepremium,driid,insuraid,dripolid,drienterby,id_corp</Data>
+<Order>driid</Order></DbDetails>
+<OnClick><assign name="drioccuptationidocc[occ]" expr="%{insure_driverLst[drioccuptationidocc]}" function="SetSel"/>
+<if cond="%{driid}"><SetVisible name="insertinsure_driver" Visible="0"/><SetVisible name="modifyinsure_driver" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

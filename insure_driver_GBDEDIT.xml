@@ -1,0 +1,156 @@
+﻿<GroupBox Name="GBDEDITinsure_driver"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_driname"><Ctrls>
+<Label Align="Right" Text="driname" Name="lb_driname" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_driname" Name="driname" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drilicence"><Ctrls>
+<Label Align="Right" Text="drilicence" Name="lb_drilicence" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_drilicence" Name="drilicence" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_dridateofbirth"><Ctrls>
+<Label Align="Right" Text="dridateofbirth" Name="lb_dridateofbirth" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_dridateofbirth" Name="dridateofbirth" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drimale"><Ctrls>
+<CheckBox Text="drimale" ToolTip="ttp_drimale" Name="drimale" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drilicencedissuedidcou"><Ctrls>
+<Label Align="Right" Text="drilicencedissuedidcou" onload="init" Name="lb_drilicencedissuedidcou" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_drilicencedissuedidcou" onload="init" Name="drilicencedissuedidcou" Size="170,100">
+	<DbDetails>
+<DbTable>insure.country</DbTable>
+<Index/>
+<Data>country </Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drinatioinalityidnat"><Ctrls>
+<Label Align="Right" Text="drinatioinalityidnat" onload="init" Name="lb_drinatioinalityidnat" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_drinatioinalityidnat" onload="init" Name="drinatioinalityidnat" Size="170,100">
+	<DbDetails>
+<DbTable>insure.nationality</DbTable>
+<Index/>
+<Data>name </Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drioccuptationidocc"><Ctrls>
+<Label Align="Right" Text="drioccuptationidocc" onload="init" Name="lb_drioccuptationidocc" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_drioccuptationidocc" onload="init" Name="drioccuptationidocc" Size="170,100">
+	<DbDetails>
+<DbTable>mylayout.occupation</DbTable>
+<Index>occ</Index>
+<Data>name,occ</Data>
+<Where>occm</Where>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_driemploymentstatusidemp"><Ctrls>
+<Label Align="Right" Text="driemploymentstatusidemp" Name="lb_driemploymentstatusidemp" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_driemploymentstatusidemp" Items="在职|离职|其它" Name="driemploymentstatusidemp" Size="170,100"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drimaindriver"><Ctrls>
+<CheckBox Text="drimaindriver" ToolTip="ttp_drimaindriver" Name="drimaindriver" Size="230,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drivehicleowner"><Ctrls>
+<CheckBox Text="drivehicleowner" ToolTip="ttp_drivehicleowner" Name="drivehicleowner" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_dridefectivehearing"><Ctrls>
+<CheckBox Text="dridefectivehearing" ToolTip="ttp_dridefectivehearing" Name="dridefectivehearing" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_dridefectivevision"><Ctrls>
+<CheckBox Text="dridefectivevision" ToolTip="ttp_dridefectivevision" Name="dridefectivevision" Size="230,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drisufferedfits"><Ctrls>
+<CheckBox Text="drisufferedfits" ToolTip="ttp_drisufferedfits" Name="drisufferedfits" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_dricurrentlicenceheld"><Ctrls>
+<CheckBox Text="dricurrentlicenceheld" ToolTip="ttp_dricurrentlicenceheld" Name="dricurrentlicenceheld" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drilicencefirstissued"><Ctrls>
+<Label Align="Right" Text="drilicencefirstissued" Name="lb_drilicencefirstissued" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_drilicencefirstissued" Name="drilicencefirstissued" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_dripasseddrivingtest"><Ctrls>
+<Label Align="Right" Text="dripasseddrivingtest" Name="lb_dripasseddrivingtest" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_dripasseddrivingtest" Name="dripasseddrivingtest" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_driaverageannualmilage"><Ctrls>
+<Label Align="Right" Text="driaverageannualmilage" Name="lb_driaverageannualmilage" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_driaverageannualmilage" Name="driaverageannualmilage" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_driyearslicenceheld"><Ctrls>
+<Label Align="Right" Text="driyearslicenceheld" Name="lb_driyearslicenceheld" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_driyearslicenceheld" Name="driyearslicenceheld" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drinumberofdrivingoffenceconvictions"><Ctrls>
+<Label Align="Right" Text="drinumberofdrivingoffenceconvictions" Name="lb_drinumberofdrivingoffenceconvictions" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_drinumberofdrivingoffenceconvictions" Name="drinumberofdrivingoffenceconvictions" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drilastdrivingoffence"><Ctrls>
+<Label Align="Right" Text="drilastdrivingoffence" Name="lb_drilastdrivingoffence" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_drilastdrivingoffence" Name="drilastdrivingoffence" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drinumberofcriminaloffences"><Ctrls>
+<Label Align="Right" Text="drinumberofcriminaloffences" Name="lb_drinumberofcriminaloffences" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_drinumberofcriminaloffences" Name="drinumberofcriminaloffences" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drilastcriminaloffence"><Ctrls>
+<Label Align="Right" Text="drilastcriminaloffence" Name="lb_drilastcriminaloffence" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_drilastcriminaloffence" Name="drilastcriminaloffence" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drinumberofmotorrelatedaccidents"><Ctrls>
+<Label Align="Right" Text="drinumberofmotorrelatedaccidents" Name="lb_drinumberofmotorrelatedaccidents" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_drinumberofmotorrelatedaccidents" Name="drinumberofmotorrelatedaccidents" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drilastmotorrelatedaccident"><Ctrls>
+<Label Align="Right" Text="drilastmotorrelatedaccident" Name="lb_drilastmotorrelatedaccident" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_drilastmotorrelatedaccident" Name="drilastmotorrelatedaccident" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drinumberofmotorrelatedclaims"><Ctrls>
+<Label Align="Right" Text="drinumberofmotorrelatedclaims" Name="lb_drinumberofmotorrelatedclaims" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_drinumberofmotorrelatedclaims" Name="drinumberofmotorrelatedclaims" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drilastmotorrelatedclaim"><Ctrls>
+<Label Align="Right" Text="drilastmotorrelatedclaim" Name="lb_drilastmotorrelatedclaim" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_drilastmotorrelatedclaim" Name="drilastmotorrelatedclaim" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drimotorinsurancecancelledbyinsurer"><Ctrls>
+<CheckBox Text="drimotorinsurancecancelledbyinsurer" ToolTip="ttp_drimotorinsurancecancelledbyinsurer" Name="drimotorinsurancecancelledbyinsurer" Size="230,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drimotorinsuranceconditionsadded"><Ctrls>
+<CheckBox Text="drimotorinsuranceconditionsadded" ToolTip="ttp_drimotorinsuranceconditionsadded" Name="drimotorinsuranceconditionsadded" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drimotorinsurancerefusedonrenewal"><Ctrls>
+<CheckBox Text="drimotorinsurancerefusedonrenewal" ToolTip="ttp_drimotorinsurancerefusedonrenewal" Name="drimotorinsurancerefusedonrenewal" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_dripreviouslydeclinemotorinsurance"><Ctrls>
+<CheckBox Text="dripreviouslydeclinemotorinsurance" ToolTip="ttp_dripreviouslydeclinemotorinsurance" Name="dripreviouslydeclinemotorinsurance" Size="230,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_dripreviousncd"><Ctrls>
+<CheckBox Text="dripreviousncd" ToolTip="ttp_dripreviousncd" Name="dripreviousncd" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drirequiredincreasepremium"><Ctrls>
+<Label Align="Right" Text="drirequiredincreasepremium" Name="lb_drirequiredincreasepremium" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_drirequiredincreasepremium" Name="drirequiredincreasepremium" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_driid" Visible="false"><Ctrls>
+<Label Align="Right" Text="driid" overlap="pre" Name="lb_driid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_driid" overlap="pre" Name="driid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insuraid"><Ctrls>
+<Label Align="Right" Text="insuraid" Name="lb_insuraid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insuraid" Name="insuraid" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_dripolid"><Ctrls>
+<Label Align="Right" Text="dripolid" Name="lb_dripolid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_dripolid" Name="dripolid" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_drienterby"><Ctrls>
+<Label Align="Right" Text="drienterby" Name="lb_drienterby" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_drienterby" Name="drienterby" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_id_corp"><Ctrls>
+<Label Align="Right" Text="id_corp" Name="lb_id_corp" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id_corp" Name="id_corp" Size="170,20"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

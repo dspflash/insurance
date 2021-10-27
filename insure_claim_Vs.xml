@@ -1,0 +1,82 @@
+﻿<GroupBox Name="GBDEDITinsure_claim"><Ctrls>
+<GroupBox Name="GB_clmvehicleidveh" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_clmvehicleidveh" Size="60,20" Text="clmvehicleidveh" Align="Right"/>
+<TextBox Name="clmvehicleidveh" Size="170,20" Text="" Weight="170" ToolTip="ttp_clmvehicleidveh">
+	<DbDetails>
+<DbTable>insure.insure_vehicle</DbTable>
+<Index>vehid</Index>
+<Data>vehLicPlate,vehID</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_insure_claimtypeidcla" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_insure_claimtypeidcla" Size="60,20" Text="insure_claimtypeidcla" Align="Right"  onload="init"/>
+<ComboBox Name="insure_claimtypeidcla" Size="170,100" Text="" Weight="170"  ToolTip="ttp_insure_claimtypeidcla"  onload="init">
+	<DbDetails>
+<DbTable>insure.insure_claimtype</DbTable>
+<Index></Index>
+<Data>nameCN </Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_insuraid" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_insuraid" Size="60,20" Text="insuraid" Align="Right"/>
+<TextBox Name="insuraid" Size="170,20" Text="" Weight="170" ToolTip="ttp_insuraid"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_clmincidentmileageattime" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_clmincidentmileageattime" Size="60,20" Text="clmincidentmileageattime" Align="Right"/>
+<TextBox Name="clmincidentmileageattime" Size="170,20" Text="" Weight="170" ToolTip="ttp_clmincidentmileageattime"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_clmincidentaddressidadd" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_clmincidentaddressidadd" Size="60,20" Text="clmincidentaddressidadd" Align="Right"/>
+<TextBox Name="clmincidentaddressidadd" Size="170,20" Text="" Weight="170" ToolTip="ttp_clmincidentaddressidadd"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_clmincidentoccured" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_clmincidentoccured" Size="60,20" Text="clmincidentoccured" Align="Right"/>
+<DateTime Name="clmincidentoccured" Format="yyyy-MM-dd HH:mm:ss" Size="170,20" Text="" Weight="170" ToolTip="ttp_clmincidentoccured"></DateTime>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_clmamountpaidamount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_clmamountpaidamount" Size="60,20" Text="clmamountpaidamount" Align="Right"/>
+<TextBox Name="clmamountpaidamount" Size="170,20" Text="" Weight="170" ToolTip="ttp_clmamountpaidamount"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_clmamountpaididccy" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_clmamountpaididccy" Size="60,20" Text="clmamountpaididccy" Align="Right"/>
+<TextBox Name="clmamountpaididccy" Size="170,20" Text="" Weight="170" ToolTip="ttp_clmamountpaididccy"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_clmlegalfeesamount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_clmlegalfeesamount" Size="60,20" Text="clmlegalfeesamount" Align="Right"/>
+<TextBox Name="clmlegalfeesamount" Size="170,20" Text="" Weight="170" ToolTip="ttp_clmlegalfeesamount"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_clmlegalfeesidccy" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_clmlegalfeesidccy" Size="60,20" Text="clmlegalfeesidccy" Align="Right"/>
+<TextBox Name="clmlegalfeesidccy" Size="170,20" Text="" Weight="170" ToolTip="ttp_clmlegalfeesidccy"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_clmrecoveriesamount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_clmrecoveriesamount" Size="60,20" Text="clmrecoveriesamount" Align="Right"/>
+<TextBox Name="clmrecoveriesamount" Size="170,20" Text="" Weight="170" ToolTip="ttp_clmrecoveriesamount"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_clmrecoveriesidccy" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_clmrecoveriesidccy" Size="60,20" Text="clmrecoveriesidccy" Align="Right"/>
+<TextBox Name="clmrecoveriesidccy" Size="170,20" Text="" Weight="170" ToolTip="ttp_clmrecoveriesidccy"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_clmtotallossincuredamount" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_clmtotallossincuredamount" Size="60,20" Text="clmtotallossincuredamount" Align="Right"/>
+<TextBox Name="clmtotallossincuredamount" Size="170,20" Text="" Weight="170" ToolTip="ttp_clmtotallossincuredamount"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_clmtotallossincurredidccy" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_clmtotallossincurredidccy" Size="60,20" Text="clmtotallossincurredidccy" Align="Right"/>
+<TextBox Name="clmtotallossincurredidccy" Size="170,20" Text="" Weight="170" ToolTip="ttp_clmtotallossincurredidccy"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_clmpolicyidpol" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_clmpolicyidpol" Size="60,20" Text="clmpolicyidpol" Align="Right"/>
+<TextBox Name="clmpolicyidpol" Size="170,20" Text="" Weight="170" ToolTip="ttp_clmpolicyidpol"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_clmenterby" Multiline="0" cols="xs12 sm6 md4 lg3"><Ctrls>
+<Label Name="lb_clmenterby" Size="60,20" Text="clmenterby" Align="Right"/>
+<TextBox Name="clmenterby" Size="170,20" Text="" Weight="170" ToolTip="ttp_clmenterby"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_clmid" Multiline="0" cols="xs12 sm6 md4 lg3" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_clmid" Size="60,20" Text="clmid" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="clmid" Size="170,20" Text="" Weight="170" ToolTip="ttp_clmid" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

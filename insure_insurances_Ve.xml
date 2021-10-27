@@ -1,0 +1,13 @@
+﻿<WndTap Name="insure_insurances" Text="insure_insurances" Ver="2">
+<var name="refreshAfterEdit" expr="0"/>
+<var name="dataRequired" expr=""/>
+<var name="dataRequireless" expr=""/>
+<xi:include href="lan\insure_insurances.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBinsure_insurances" id="insure_insurances" Text="insure_insurances" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="insure_insurances_GBDEDIT.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="insure_insurances_GBOPE.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="insure_insurances_Vh.xml"/></Ctrls></GroupBox></Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate><SetVisible name="insertinsure_insurances" Visible="1"/><SetVisible name="modifyinsure_insurances" Visible="0"/></OnActivate>
+</WndTap>

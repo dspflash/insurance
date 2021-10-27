@@ -1,0 +1,17 @@
+﻿<GroupBox Name="GBDVinsure_policy" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="insure_policy_vLst" ToolTip="ttp_insure_policy" Size="700,420" OnLoad="init" loadedclick="0">
+	<DbDetails >
+<DbTable>insure.insure_policy i</DbTable>
+<Index>polid</Index>
+<Data>i.polcovertypeidcov,i.polinsuredtypeidins,i.polreasonidrea,i.polreplaced,i.polexternalsystemid,i.polsystemid,i.polinception,i.polexpiry,i.polleadinsurer,i.polcoinsurancecover,i.polfacultativecover,i.polquotashare,i.poltax,i.poluwyear,i.polgrosspremiumamount,i.polgrosspremiumidccy,i.dripolicyidpol,i.insuraid,i.id_corp,i.polenterby,i.polenterat,i.polid</Data>
+<Order>polid</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>polid='%{insure_policy_vLst[polid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.insure_policy.insure_policyLst"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>insure.insure_policy</DbTable>
+<Where>polid='%{insure_policy_vLst[polid]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

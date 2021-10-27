@@ -1,0 +1,275 @@
+﻿<GroupBox Name="GBDEDITinsure_vehicle"><Ctrls>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehlicplate"><Ctrls>
+<Label Align="Right" Text="vehlicplate" Name="lb_vehlicplate" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehlicplate" Name="vehlicplate" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehregisterfirst"><Ctrls>
+<Label Align="Right" Text="vehregisterfirst" Name="lb_vehregisterfirst" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_vehregisterfirst" Name="vehregisterfirst" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehyearofmanufacture"><Ctrls>
+<Label Align="Right" Text="vehyearofmanufacture" Name="lb_vehyearofmanufacture" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_vehyearofmanufacture" Name="vehyearofmanufacture" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehstatus"><Ctrls>
+<Label Align="Right" Text="vehstatus" Name="lb_vehstatus" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_vehstatus" Items="正常|转出|被盗抢|停驶|注销|违法未处理|海关监管|事故未处理|嫌疑车|查封|暂扣|强制注销|事故逃逸|锁定" Name="vehstatus" Size="170,100"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehvin"><Ctrls>
+<Label Align="Right" Text="vehvin" Name="lb_vehvin" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehvin" Name="vehvin" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehbodycolor"><Ctrls>
+<Label Align="Right" Text="vehbodycolor" Name="lb_vehbodycolor" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehbodycolor" Name="vehbodycolor" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehengineid"><Ctrls>
+<Label Align="Right" Text="vehengineid" Name="lb_vehengineid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehengineid" Name="vehengineid" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehenginesizecc"><Ctrls>
+<Label Align="Right" Text="vehenginesizecc" Name="lb_vehenginesizecc" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehenginesizecc" Name="vehenginesizecc" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehbodyidbod"><Ctrls>
+<Label Align="Right" Text="vehbodyidbod" onload="init" Name="lb_vehbodyidbod" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_vehbodyidbod" onload="init" Name="vehbodyidbod" Size="170,100">
+	<DbDetails>
+<DbTable>insure.insure_bodytype</DbTable>
+<Index/>
+<Data>nameCN </Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehmakeidmak"><Ctrls>
+<Label Align="Right" Text="vehmakeidmak" onload="init" Name="lb_vehmakeidmak" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_vehmakeidmak" onload="init" Name="vehmakeidmak" Size="170,100">
+	<DbDetails>
+<DbTable>insure.insure_make</DbTable>
+<Index/>
+<Data>name </Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehmodelidmod"><Ctrls>
+<Label Align="Right" Text="vehmodelidmod" onload="init" Name="lb_vehmodelidmod" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_vehmodelidmod" onload="init" Name="vehmodelidmod" Size="170,100">
+	<DbDetails>
+<DbTable>insure.insure_model</DbTable>
+<Index/>
+<Data>name </Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehmilage"><Ctrls>
+<Label Align="Right" Text="vehmilage" Name="lb_vehmilage" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehmilage" Name="vehmilage" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehseatingcapacity"><Ctrls>
+<Label Align="Right" Text="vehseatingcapacity" Name="lb_vehseatingcapacity" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehseatingcapacity" Name="vehseatingcapacity" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehowner"><Ctrls>
+<Label Align="Right" Text="vehowner" Name="lb_vehowner" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehowner" Name="vehowner" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehowneraddr"><Ctrls>
+<Label Align="Right" Text="vehowneraddr" Name="lb_vehowneraddr" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehowneraddr" Name="vehowneraddr" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehvaluewhennewidccy"><Ctrls>
+<Label Align="Right" Text="vehvaluewhennewidccy" Name="lb_vehvaluewhennewidccy" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehvaluewhennewidccy" Name="vehvaluewhennewidccy" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehcurrentestimatedvalueidccy"><Ctrls>
+<Label Align="Right" Text="vehcurrentestimatedvalueidccy" Name="lb_vehcurrentestimatedvalueidccy" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehcurrentestimatedvalueidccy" Name="vehcurrentestimatedvalueidccy" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehunladedweightamount"><Ctrls>
+<Label Align="Right" Text="vehunladedweightamount" Name="lb_vehunladedweightamount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehunladedweightamount" Name="vehunladedweightamount" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehunladedweightidwei"><Ctrls>
+<Label Align="Right" Text="vehunladedweightidwei" Name="lb_vehunladedweightidwei" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehunladedweightidwei" Name="vehunladedweightidwei" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehmaxloadweightamount"><Ctrls>
+<Label Align="Right" Text="vehmaxloadweightamount" Name="lb_vehmaxloadweightamount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehmaxloadweightamount" Name="vehmaxloadweightamount" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehmaxloadweightidwei"><Ctrls>
+<Label Align="Right" Text="vehmaxloadweightidwei" Name="lb_vehmaxloadweightidwei" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehmaxloadweightidwei" Name="vehmaxloadweightidwei" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehpolicyidpol"><Ctrls>
+<Label Align="Right" Text="vehpolicyidpol" Name="lb_vehpolicyidpol" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehpolicyidpol" Name="vehpolicyidpol" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehsuminsuredlocalamount"><Ctrls>
+<Label Align="Right" Text="vehsuminsuredlocalamount" Name="lb_vehsuminsuredlocalamount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehsuminsuredlocalamount" Name="vehsuminsuredlocalamount" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehsuminsuredlocalidccy"><Ctrls>
+<Label Align="Right" Text="vehsuminsuredlocalidccy" Name="lb_vehsuminsuredlocalidccy" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehsuminsuredlocalidccy" Name="vehsuminsuredlocalidccy" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehpremiumlocalidccy"><Ctrls>
+<Label Align="Right" Text="vehpremiumlocalidccy" Name="lb_vehpremiumlocalidccy" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehpremiumlocalidccy" Name="vehpremiumlocalidccy" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehdaytimelocationidadd"><Ctrls>
+<Label Align="Right" Text="vehdaytimelocationidadd" Name="lb_vehdaytimelocationidadd" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehdaytimelocationidadd" Name="vehdaytimelocationidadd" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehnighttimelocationidadd"><Ctrls>
+<Label Align="Right" Text="vehnighttimelocationidadd" Name="lb_vehnighttimelocationidadd" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehnighttimelocationidadd" Name="vehnighttimelocationidadd" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehalarmfitted"><Ctrls>
+<CheckBox Text="vehalarmfitted" ToolTip="ttp_vehalarmfitted" Name="vehalarmfitted" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehboughtfromnew"><Ctrls>
+<CheckBox Text="vehboughtfromnew" ToolTip="ttp_vehboughtfromnew" Name="vehboughtfromnew" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehtrackingsystemfitted"><Ctrls>
+<CheckBox Text="vehtrackingsystemfitted" ToolTip="ttp_vehtrackingsystemfitted" Name="vehtrackingsystemfitted" Size="230,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehcompanyvehicle"><Ctrls>
+<CheckBox Text="vehcompanyvehicle" ToolTip="ttp_vehcompanyvehicle" Name="vehcompanyvehicle" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehrighthanddrive"><Ctrls>
+<CheckBox Text="vehrighthanddrive" ToolTip="ttp_vehrighthanddrive" Name="vehrighthanddrive" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehsubjecttoloan"><Ctrls>
+<CheckBox Text="vehsubjecttoloan" ToolTip="ttp_vehsubjecttoloan" Name="vehsubjecttoloan" Size="230,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehdriverairbagfitted"><Ctrls>
+<CheckBox Text="vehdriverairbagfitted" ToolTip="ttp_vehdriverairbagfitted" Name="vehdriverairbagfitted" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehpassengerairbagfitted"><Ctrls>
+<CheckBox Text="vehpassengerairbagfitted" ToolTip="ttp_vehpassengerairbagfitted" Name="vehpassengerairbagfitted" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehrentalvehicle"><Ctrls>
+<CheckBox Text="vehrentalvehicle" ToolTip="ttp_vehrentalvehicle" Name="vehrentalvehicle" Size="230,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehtrailer"><Ctrls>
+<CheckBox Text="vehtrailer" ToolTip="ttp_vehtrailer" Name="vehtrailer" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehcommercialvehicle"><Ctrls>
+<CheckBox Text="vehcommercialvehicle" ToolTip="ttp_vehcommercialvehicle" Name="vehcommercialvehicle" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehusagebusiness"><Ctrls>
+<CheckBox Text="vehusagebusiness" ToolTip="ttp_vehusagebusiness" Name="vehusagebusiness" Size="230,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehusagecarriageofgoods"><Ctrls>
+<CheckBox Text="vehusagecarriageofgoods" ToolTip="ttp_vehusagecarriageofgoods" Name="vehusagecarriageofgoods" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehusagesocialhome"><Ctrls>
+<CheckBox Text="vehusagesocialhome" ToolTip="ttp_vehusagesocialhome" Name="vehusagesocialhome" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehtoolsstroreddaytime"><Ctrls>
+<CheckBox Text="vehtoolsstroreddaytime" ToolTip="ttp_vehtoolsstroreddaytime" Name="vehtoolsstroreddaytime" Size="230,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehtoolsstrorednighttime"><Ctrls>
+<CheckBox Text="vehtoolsstrorednighttime" ToolTip="ttp_vehtoolsstrorednighttime" Name="vehtoolsstrorednighttime" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_vehid" Visible="false"><Ctrls>
+<Label Align="Right" Text="vehid" overlap="pre" Name="lb_vehid" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehid" overlap="pre" Name="vehid" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehroadworthycertificate"><Ctrls>
+<CheckBox Text="vehroadworthycertificate" ToolTip="ttp_vehroadworthycertificate" Name="vehroadworthycertificate" Size="230,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehroadworthycertificateexpiry"><Ctrls>
+<Label Align="Right" Text="vehroadworthycertificateexpiry" Name="lb_vehroadworthycertificateexpiry" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_vehroadworthycertificateexpiry" Name="vehroadworthycertificateexpiry" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehcoverstart"><Ctrls>
+<Label Align="Right" Text="vehcoverstart" Name="lb_vehcoverstart" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_vehcoverstart" Name="vehcoverstart" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehcoverend"><Ctrls>
+<Label Align="Right" Text="vehcoverend" Name="lb_vehcoverend" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_vehcoverend" Name="vehcoverend" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehremark"><Ctrls>
+<Label Align="Right" Text="vehremark" Name="lb_vehremark" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehremark" Name="vehremark" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_insuraid"><Ctrls>
+<Label Align="Right" Text="insuraid" Name="lb_insuraid" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_insuraid" Name="insuraid" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehsoundsystemidsou"><Ctrls>
+<Label Align="Right" Text="vehsoundsystemidsou" Name="lb_vehsoundsystemidsou" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehsoundsystemidsou" Name="vehsoundsystemidsou" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehparkedidpar"><Ctrls>
+<Label Align="Right" Text="vehparkedidpar" Name="lb_vehparkedidpar" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehparkedidpar" Name="vehparkedidpar" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehaccidentidacc"><Ctrls>
+<Label Align="Right" Text="vehaccidentidacc" Name="lb_vehaccidentidacc" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehaccidentidacc" Name="vehaccidentidacc" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehmodifiedidmdf"><Ctrls>
+<Label Align="Right" Text="vehmodifiedidmdf" Name="lb_vehmodifiedidmdf" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehmodifiedidmdf" Name="vehmodifiedidmdf" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehriskcodeidrsk"><Ctrls>
+<Label Align="Right" Text="vehriskcodeidrsk" Name="lb_vehriskcodeidrsk" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehriskcodeidrsk" Name="vehriskcodeidrsk" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehcapacitiyvolume"><Ctrls>
+<Label Align="Right" Text="vehcapacitiyvolume" Name="lb_vehcapacitiyvolume" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehcapacitiyvolume" Name="vehcapacitiyvolume" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehwhenisuredtookpossession"><Ctrls>
+<Label Align="Right" Text="vehwhenisuredtookpossession" Name="lb_vehwhenisuredtookpossession" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_vehwhenisuredtookpossession" Name="vehwhenisuredtookpossession" Size="170,20" Format="yyyy-MM-dd"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehsuminsuredforeignamount"><Ctrls>
+<Label Align="Right" Text="vehsuminsuredforeignamount" Name="lb_vehsuminsuredforeignamount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehsuminsuredforeignamount" Name="vehsuminsuredforeignamount" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehsuminsuredforeignidccy"><Ctrls>
+<Label Align="Right" Text="vehsuminsuredforeignidccy" Name="lb_vehsuminsuredforeignidccy" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehsuminsuredforeignidccy" Name="vehsuminsuredforeignidccy" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehriskcurrencyamount"><Ctrls>
+<Label Align="Right" Text="vehriskcurrencyamount" Name="lb_vehriskcurrencyamount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehriskcurrencyamount" Name="vehriskcurrencyamount" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehriskcurrencyidccy"><Ctrls>
+<Label Align="Right" Text="vehriskcurrencyidccy" Name="lb_vehriskcurrencyidccy" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehriskcurrencyidccy" Name="vehriskcurrencyidccy" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehpremiumforeignamount"><Ctrls>
+<Label Align="Right" Text="vehpremiumforeignamount" Name="lb_vehpremiumforeignamount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehpremiumforeignamount" Name="vehpremiumforeignamount" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehpremiumforeignidccy"><Ctrls>
+<Label Align="Right" Text="vehpremiumforeignidccy" Name="lb_vehpremiumforeignidccy" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehpremiumforeignidccy" Name="vehpremiumforeignidccy" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehcurrentestimateedvalueamount"><Ctrls>
+<Label Align="Right" Text="vehcurrentestimateedvalueamount" Name="lb_vehcurrentestimateedvalueamount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehcurrentestimateedvalueamount" Name="vehcurrentestimateedvalueamount" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehpremiumlocalamount"><Ctrls>
+<Label Align="Right" Text="vehpremiumlocalamount" Name="lb_vehpremiumlocalamount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehpremiumlocalamount" Name="vehpremiumlocalamount" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehvaluewhennewamount"><Ctrls>
+<Label Align="Right" Text="vehvaluewhennewamount" Name="lb_vehvaluewhennewamount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehvaluewhennewamount" Name="vehvaluewhennewamount" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" overlap="pre" Name="GB_id_corp" Visible="false"><Ctrls>
+<Label Align="Right" Text="id_corp" overlap="pre" Name="lb_id_corp" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id_corp" overlap="pre" Name="id_corp" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4 lg3" Multiline="0" Name="GB_vehenterby"><Ctrls>
+<Label Align="Right" Text="vehenterby" Name="lb_vehenterby" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_vehenterby" Name="vehenterby" Size="170,20"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

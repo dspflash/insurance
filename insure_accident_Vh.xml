@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVinsure_accident" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="insure_accidentLst" ToolTip="ttp_insure_accident" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<DbTable>insure.insure_accident</DbTable>
+<Index>accid</Index>
+<Data>accdriveriddri,accnumberofvehiclesinvolved,accinjurytodriver,accinsureddriving,acclightson,accdriverliable,accseatbeltsused,acccarryinggoods,accdriverairbagdeployed,accpassengerairbagdeployed,accinjuryothervehicledrivers,accinjurytoothervehiclepassengers,accinjurytopassengers,accinjurytothirdparties,accdamagetothirdparty,accpoliceprosecutingdriver,accpolicerecorded,accpolicewitness,accid,accenterby</Data>
+<Order>accid</Order></DbDetails>
+<OnClick><assign name="accdriveriddri[driid]" expr="%{insure_accidentLst[accdriveriddri]}" function="SetSel"/>
+<if cond="%{accid}"><SetVisible name="insertinsure_accident" Visible="0"/><SetVisible name="modifyinsure_accident" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

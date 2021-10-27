@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVinsure_insurances"><Ctrls>
+<ListCtrl loadedclick="0" ToolTip="ttp_insure_insurances" Name="insure_insurancesLst" Size="700,420">
+	<DbDetails fcsm="1">
+<DbTable>insure.insure_insurances i left join mylayout.bizdep m on i.insura_departresp=m.dep_id left join mylayout.paymentmethod m0 on i.insura_paymethod=m0.idx left join mylayout.userlogin m1 on i.insura_responsible=m1.user_code</DbTable>
+<Index>insura_idx</Index>
+<Data>i.insura_vehid,i.insura_code,i.insura_insured,i.insura_idcardnum,i.insura_policyholders,m.dep_name_cn insura_departresp,i.insura_infosource,i.insura_industry4work,i.insura_sex,i.insura_age,i.insura_married,i.insura_birthday,i.insura_interests,i.insura_dt_inception,i.insura_dt_due,i.insura_insurfirm,i.insura_contact,i.insura_addr4contact,i.insura_phone,i.insura_premiumsreceivable,i.insura_preferential,i.insura_preferentialreal,i.insura_premiums,i.insura_premiumsreceived,i.insura_traveltax,i.insura_checkmark,i.insura_invoiceno,i.insura_paystatus,i.insura_paydt,m0.name insura_paymethod,i.insura_isgroupedbuy,i.insura_iswithdraw,i.insura_reasonwithdraw,i.insura_amountwithdraw,i.insura_dtwithdraw,i.insura_saleman,i.insura_recommended,m1.user_name insura_responsible,i.insura_remark,i.insura_enteredby,i.id_corp,i.insura_idx</Data>
+<Order>insura_idx</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>insura_idx='%{insure_insurances_vLst[insura_idx]}'</Where></DbDetails><submit next="$this.insure_insurances.insure_insurancesLst" namelist="DbDetails"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>insure.insure_insurances</DbTable>
+<Where>insura_idx='%{insure_insurances_vLst[insura_idx]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>
